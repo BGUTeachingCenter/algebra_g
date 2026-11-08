@@ -1085,13 +1085,14 @@ A^2&=\begin{pmatrix}
 \end{pmatrix}=\begin{pmatrix}
 1 &0 \\
 0 &1
-\end{pmatrix}=I_2$$
+\end{pmatrix}=I_2\end{aligned}$$
 
 מאחר שהתקבלה מטריצת היחידה, המשך החישוב פשוט:
 $$
 \begin{aligned}
 A^3&=A^2\cdot A=I_2\cdot A=A &\implies A^4=A^3\cdot A=A\cdot A=A^2=I_2 \\
 &\implies A^5=A^4\cdot A=I_2\cdot A=A
+\end{aligned}
 $$
 
 וכן הלאה, כאשר מתקיים חוק מחזוריות
