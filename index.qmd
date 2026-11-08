@@ -2,7 +2,7 @@
 
 :::{.home-header}
 <img src="logo.png" alt="לוגו אוניברסיטת בן גוריון" class="home-header__logo" />
-<p class="home-header__title">אלגברה לינארית להנדסה</p>
+<p class="home-header__title">מבוא לאלגברה ג׳</p>
 <p class="home-header__authors">ד"ר יונתן שלח &nbsp;·&nbsp; ד"ר נדב מאיר</p>
 :::
 
