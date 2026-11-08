@@ -1090,8 +1090,9 @@ A^2&=\begin{pmatrix}
 מאחר שהתקבלה מטריצת היחידה, המשך החישוב פשוט:
 $$
 \begin{aligned}
-A^3&=A^2\cdot A=I_2\cdot A=A &\implies A^4=A^3\cdot A=A\cdot A=A^2=I_2 \\
-&\implies A^5=A^4\cdot A=I_2\cdot A=A
+A^3&=A^2\cdot A=I_2\cdot A=A\\
+A^4&=A^3\cdot A=A\cdot A=A^2=I_2 \\
+A^5&=A^4\cdot A=I_2\cdot A=A
 \end{aligned}
 $$
 
