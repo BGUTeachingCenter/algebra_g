@@ -731,10 +731,10 @@ $$
 והסיקו כי אם
 
 $$
-A=\begin{pmatrix}
+,A=\begin{pmatrix}
 a&b\\
 c&d
-\end{pmatrix},
+\end{pmatrix}
 $$
 
 אז
@@ -748,7 +748,7 @@ $$
 נתבונן במלבן שקודקודיו
 
 $$
-(0,0),\qquad (a+c,0),\qquad (a+c,b+d),\qquad (0,b+d).
+.(0,0),\qquad (a+c,0),\qquad (a+c,b+d),\qquad (0,b+d)
 $$
 
 שטח המלבן הוא
@@ -771,14 +771,10 @@ $$
 .c(b+d)
 $$
 
-לפיכך,
+לכן, מתקיים
 
 $$
-\begin{aligned}
-S(P)
-&=(a+c)(b+d)-(a+c)b-c(b+d)\\
-&=ad-bc.
-\end{aligned}
+.S(P)=(a+c)(b+d)-(a+c)b-c(b+d)=ad-bc
 $$
 
 מצד שני,
