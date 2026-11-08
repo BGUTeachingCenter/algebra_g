@@ -1,0 +1,55 @@
+# Publishes the book to GitHub Pages: https://shelahy.github.io/algebra_g/
+# Requires: Settings -> Pages -> Source = "GitHub Actions".
+# Runs alongside deploy-book.yml (the teaching-center AWS deploy); independent of it.
+name: Publish book to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python (post-render scripts)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render book (HTML)
+        run: quarto render --to html
+
+      - name: Sanity - _book/index.html must exist
+        run: test -f _book/index.html || { echo "render produced no _book/index.html"; exit 1; }
+
+      - name: Disable Jekyll
+        run: touch _book/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _book
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
