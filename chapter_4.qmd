@@ -736,6 +736,8 @@ $$
 ::: exercise
 יהיו $v_1=(a,b),v_2=(c,d)$ שני וקטורים ברביע הראשון, המסודרים כפי שמתואר בציור, כך שהמעבר מ-$v_1$ ל-$v_2$ הוא נגד כיוון השעון. נסמן ב-$P$ את המקבילית הנפרשת ע\"י שני הוקטורים.
 
+![המקבילית הנפרשת על ידי $v_1=(a,b)$ ו-$v_2=(c,d)$](images/DetParallelogram.png){#fig-det-parallelogram width=70%}
+
 בעזרת חישובי שטחים בלבד, הראו כי
 
 $$
@@ -764,6 +766,8 @@ $$
 $$
 .(0,0),\qquad (a+c,0),\qquad (a+c,b+d),\qquad (0,b+d)
 $$
+
+![הגבהים המשמשים לחישוב השטחים](images/DetParallelogramHeights.png){#fig-det-parallelogram-heights width=70%}
 
 שטח המלבן הוא
 
