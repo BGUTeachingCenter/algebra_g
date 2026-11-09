@@ -28,6 +28,9 @@ book:
       - icon: download
         href: downloads/book.pdf
         text: הורדת הספר כ-PDF
+  # Quarto reads google-analytics under book: (or website:). One tag only: the old
+  # _includes/head.html also loaded the algebra book's property (G-TPY4VZJV6M).
+  google-analytics: "G-RF7PBPY7QX"
 
 language:
   crossref-ch-prefix: "פרק"     # טקסט @sec-הפניה לפרק שלם
@@ -78,7 +81,6 @@ format:
     include-after-body:
       - tracking.html
       - report-typo.html
-    include-in-header: _includes/head.html
       
     filters:
       - env-to-callout.lua
@@ -110,8 +112,6 @@ format:
 
 number-sections: true
 
-website:
-   google-analytics: "G-RF7PBPY7QX"
 
 
 resources:
