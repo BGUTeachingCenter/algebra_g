@@ -767,7 +767,7 @@ $$
 .(0,0),\qquad (a+c,0),\qquad (a+c,b+d),\qquad (0,b+d)
 $$
 
-![החלוקה המשמשת לחישוב השטח](images/DetParallelogramDecomposition.png.png){#fig-det-parallelogram-decomposition width=70%}
+![החלוקה המשמשת לחישוב השטח](images/DetParallelogramDecomposition.png){#fig-det-parallelogram-decomposition width=70%}
 
 שטח המלבן הוא
 
