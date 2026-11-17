@@ -208,333 +208,6 @@
     \end{aligned}$$
 :::
 
-::: exercise
-
-א. מצאו קבוצה פורשת עבור תת-המרחב של המטריצות הסימטריות.
-
-ב. מצאו קבוצה פורשת עבור תת-המרחב של המטריצות האנטי-סימטריות.
-:::
-
-::: {.callout-note collapse="true" title="פתרון"}
- 
-
-א. כל מטריצה סימטרית היא מהצורה $$.\begin{pmatrix}
-    a & b\\
-    b & d
-    \end{pmatrix}=a\begin{pmatrix}
-    1 & 0\\
-    0 & 0
-    \end{pmatrix}+b\begin{pmatrix}
-    0 & 1\\
-    1 & 0
-    \end{pmatrix}+d\begin{pmatrix}
-    0 & 0\\
-    0 & 1
-    \end{pmatrix}$$ אז קיבלנו קבוצה פורשת: $$\Set{\begin{pmatrix}
-    1 & 0\\
-    0 & 0
-    \end{pmatrix},\begin{pmatrix}
-    0 & 1\\
-    1 & 0
-    \end{pmatrix},\begin{pmatrix}
-    0 & 0\\
-    0 & 1
-    \end{pmatrix}}$$
-
-ב. כל מטריצה אנטי-סימטרית היא מהצורה $$.\begin{pmatrix}
-    0 & b\\
-    -b & 0
-    \end{pmatrix}=b\begin{pmatrix}
-    0 & 1\\
-    -1 & 0
-    \end{pmatrix}$$ אז קיבלנו קבוצה פורשת: $$\Set{\begin{pmatrix}
-    0 & 1\\
-    -1 & 0
-    \end{pmatrix}}$$
-:::
-
-ההגדרה הבאה מתייחסת לתת-מרחבים שקשורים למטריצה נתונה.
-
-:::: {.definition #def-row-col}
-`\label{def:row-col}`{=latex} תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$ עם שורות $$R_1^A,...,R_m^A\in\mathbb{F}^n$$ ועמודות $$C_1^A,...,C_n^A\in\mathbb{F}^m$$ נגדיר את מרחב השורות $$,\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Span}}(R_1^A,...,R_m^A)\subseteq\mathbb{F}^n$$ ואת מרחב העמודות $$.\mathop{\mathrm{Col}}(A)=\mathop{\mathrm{Span}}(C_1^A,...,C_n^A)\subseteq\mathbb{F}^m$$
-:::
-
-::: example
- 
-
-א. עבור $$A=\begin{pmatrix}
-    1 & 2 &3 \\
-    -1 &0 &1
-    \end{pmatrix}$$ מתקיים: $$\begin{aligned}
-    \mathop{\mathrm{Row}}(A)&=\mathop{\mathrm{Span}}((1,2,3),(-1,0,1)) \\
-    \mathop{\mathrm{Col}}(A)&=\mathop{\mathrm{Span}}\left(\begin{pmatrix}1 \\ -1\end{pmatrix},\begin{pmatrix}2 \\ 0\end{pmatrix},\begin{pmatrix}3 \\ 1\end{pmatrix}\right)
-    \end{aligned}$$
-
-ב. $$B=\begin{pmatrix}
-    i & 0  \\
-    2 &1+i \\
-    3 & -i
-    \end{pmatrix}$$ מתקיים: $$\begin{aligned}
-    \mathop{\mathrm{Row}}(B)&=\mathop{\mathrm{Span}}((i,0),(2,1+i),(3,-i)) \\
-    \mathop{\mathrm{Col}}(B)&=\mathop{\mathrm{Span}}\left(\begin{pmatrix}i \\ 2 \\ 3\end{pmatrix},\begin{pmatrix}0 \\ 1+i \\-i\end{pmatrix}\right)
-    \end{aligned}$$
-:::
-
-הטענה הבאה מראה את הקשר בין מרחב עמודות לממ\"ל.
-
-:::: {.proposition #prp-column-space}
-*`\label{prop:column-space}`{=latex} תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$. אז לכל וקטור עמודה $w\in\mathbb{F}^m$ מתקיים $w\in\mathop{\mathrm{Col}}(A)$ אם ורק אם קיים פתרון לממ\"ל $Ax=w$.*
-:::
-
-::: proof
- נכתוב את $A$ בהתאם לוקטורי העמודות שלה:
-
-$$A=\begin{pmatrix}
-| & | & & | \\
-v_1 & v_2 & \cdots & v_n \\
-| & | & & |
-\end{pmatrix}$$
-
-יהי $w\in\mathbb{F}^m$. אז לפי ההגדרה, מתקיים $$\begin{aligned}
-w\in\mathop{\mathrm{Col}}(A)
-&\iff
-\exists \alpha_1,\ldots,\alpha_n\in\mathbb{F}:\
-w=\alpha_1v_1+\cdots+\alpha_nv_n
-\\[6pt]
-&\iff\exists x=
-\begin{pmatrix}
-\alpha_1\\
-\vdots\\
-\alpha_n
-\end{pmatrix}
-\in\mathbb{F}^n :\
-Ax=w
-\end{aligned}$$
-
-השתמשנו בחישוב $$.Ax=\begin{pmatrix}
-| & | & & | \\
-v_1 & v_2 & \cdots & v_n \\
-| & | & & |
-\end{pmatrix}\begin{pmatrix}
-\alpha_1\\
-\vdots\\
-\alpha_n
-\end{pmatrix}=\alpha_1v_1+...+\alpha_nv_n$$
-:::
-
-::: example
-תהי $$.A=
-\begin{pmatrix}
-1 & 0 & 1\\
-0 & 1 & 1\\
-1 & 1 & 2\\
-0 & 0 & 1
-\end{pmatrix}$$ נבדוק איזה וקטור (אם בכלל) מהוקטורים הבאים שייך ל- $\mathop{\mathrm{Col}}(A)$: $$w_1=
-\begin{pmatrix}
-1\\
-1\\
-2\\
-0
-\end{pmatrix},
-\quad
-w_2=
-\begin{pmatrix}
-0\\
-0\\
-1\\
-0
-\end{pmatrix}$$
-
-לפי טענה -@prp-column-space צריך לפתור שתי ממ\"ליות: $Ax=w_1$ מחד ו- $Ax=w_2$ מאידך. כדי לחסוך עבודה, ניתן לפתור את שתיהן במקביל ע\"י מטריצה מורחבת $(A|w_1|w_2)$ ודירוג לפי $A$:
-
-$$\begin{aligned}
-&\left(
-\begin{array}{ccc|c|c}
-1 & 0 & 1 & 1 & 0\\
-0 & 1 & 1 & 1 & 0\\
-1 & 1 & 2 & 2 & 1\\
-0 & 0 & 1 & 0 & 0
-\end{array}
-\right)
-\xrightarrow{R_3 - R_1\to R_3}
-\left(
-\begin{array}{ccc|c|c}
-1 & 0 & 1 & 1 & 0\\
-0 & 1 & 1 & 1 & 0\\
-0 & 1 & 1 & 1 & 1\\
-0 & 0 & 1 & 0 & 0
-\end{array}
-\right)
-\\[8pt]
-&\xrightarrow{R_3 - R_2\to R_3}
-\left(
-\begin{array}{ccc|c|c}
-1 & 0 & 1 & 1 & 0\\
-0 & 1 & 1 & 1 & 0\\
-0 & 0 & 0 & 0 & 1\\
-0 & 0 & 1 & 0 & 0
-\end{array}
-\right)
-\xrightarrow{R_3 \leftrightarrow R_4}
-\left(
-\begin{array}{ccc|c|c}
-1 & 0 & 1 & 1 & 0\\
-0 & 1 & 1 & 1 & 0\\
-0 & 0 & 1 & 0 & 0\\
-0 & 0 & 0 & 0 & 1
-\end{array}
-\right)
-\\[8pt]
-&\xrightarrow{R_1 - R_3\to R_1}
-\left(
-\begin{array}{ccc|c|c}
-1 & 0 & 0 & 1 & 0\\
-0 & 1 & 1 & 1 & 0\\
-0 & 0 & 1 & 0 & 0\\
-0 & 0 & 0 & 0 & 1
-\end{array}
-\right)
-\xrightarrow{R_2 - R_3\to R_2}
-\left(
-\begin{array}{ccc|c|c}
-1 & 0 & 0 & 1 & 0\\
-0 & 1 & 0 & 1 & 0\\
-0 & 0 & 1 & 0 & 0\\
-0 & 0 & 0 & 0 & 1
-\end{array}
-\right)
-\end{aligned}$$
-
-המסקנה היא שלא קיים פתרון לממ\"ל $Ax=w_2$ כי יש שורת סתירה, ולכן $w_2\notin\mathop{\mathrm{Col}}(A)$. מנגד, קיים פתרון לממ\"ל $Ax=w_1$. לכן, מתקיים $w_1\in\mathop{\mathrm{Col}}(A)$ ואף מצאנו את הסקלרים בתנאי הפרישה: $$\begin{pmatrix}
-1\\
-1\\
-2\\
-0
-\end{pmatrix}=1\cdot\begin{pmatrix}
-1 \\
-0 \\
-1 \\
-0
-\end{pmatrix}+1\cdot\begin{pmatrix}
-0 \\
-1 \\
-1 \\
-0 
-\end{pmatrix} +0\cdot\begin{pmatrix}
-1\\
-1\\
-2\\
-1
-\end{pmatrix}$$
-:::
-
-עד כה ראינו שתי דרכים לייצר תת-מרחב של $\mathbb{F}^n$: ע\"י לקיחת $\mathop{\mathrm{Span}}$ של וקטורים נתונים, או ע\"י לקיחת מרחב הפתרונות של ממ\"ל הומוגנית. בתרגיל הבא נראה איך לעבור מההצגה השנייה להצגה הראשונה.
-
-::: exercise
-מצאו קבוצה פורשת עבור $\mathop{\mathrm{N}}(A)$ כאשר $$.A=\begin{pmatrix}
-1 & 1 & 0 & -1 \\
-0 & 1 & 1 & 1 \\
-1 & 2 & 1 & 0
-\end{pmatrix}$$
-:::
-
-::: {.callout-note collapse="true" title="פתרון"}
-נפתור את הממ\"ל ההומוגנית $Ax=\underline{0}$ ע\"י דירוג, ונראה שהוקטורים הפורשים מסתתרים בתוך ההצגה הפרמטרית.
-
-$$\begin{pmatrix}
-1 & 1 & 0 & -1 \\
-0 & 1 & 1 & 1 \\
-1 & 2 & 1 & 0
-\end{pmatrix}\xrightarrow{R_3-R_1-R_2\to R_3}\begin{pmatrix}
-1 & 1 & 0 &-1\\
-0 & 1 & 1 & 1 \\
-0 & 0 & 0 & 0
-\end{pmatrix}\xrightarrow{R_1-R_2\to R_1}\begin{pmatrix}
-1 & 0 & -1 & -2\\
-0 & 1 & 1 & 1\\
-0 & 0 & 0 & 0
-\end{pmatrix}$$
-
-לפי הדירוג נובע כי $$.\begin{pmatrix}
-    x_1 \\
-    x_2 \\
-    x_3 \\
-    x_4
-\end{pmatrix}\in \mathop{\mathrm{N}}(A) \iff \begin{cases}
-    x_1-x_3-2x_4&=0 \\
-    x_2+x_3+x_4&=0
-\end{cases}$$
-
-המשתנים החופשיים הם $x_3,x_4$. נציב $(x_3,x_4)=(s,t)$ ונקבל $$\begin{aligned}
-\mathop{\mathrm{N}}(A)&=\left\{\begin{pmatrix}
-s+2t\\
--s-t\\
-s\\
-t
-\end{pmatrix}\middle|s,t\in\mathbb{R}\right\}=\left\{s\begin{pmatrix}
-1\\
--1\\
-1\\
-0
-\end{pmatrix}+t\begin{pmatrix}
-2\\
--1\\
-0\\
-1
-\end{pmatrix}\middle|s,t\in\mathbb{R}\right\}\\
-&=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
-1\\
--1\\
-1\\
-0
-\end{pmatrix},\begin{pmatrix}
-2\\
--1\\
-0\\
-1
-\end{pmatrix}\right)
-\end{aligned}$$
-
-השוויון השני קל לבדיקה, אבל הדרך להגיע אליו היא \"לפרק\" את הוקטור $\begin{pmatrix}s+2t\\-s-t\\s\\t\end{pmatrix}$ לסכום של שני וקטורים כך שבכל אחד יופיע רק פרמטר אחד, ואז מכל וקטור אפשר להוציא את הפרמטר המתאים החוצה לפי כפל בסקלר. הנה ההסבר המלא: $$\begin{pmatrix}
-s+2t\\
--s-t\\
-s\\
-t
-\end{pmatrix}=\begin{pmatrix}
-s\\
--s\\
-s\\
-0
-\end{pmatrix}+\begin{pmatrix}
-2t\\
--t\\
-0\\
-t
-\end{pmatrix}=s\begin{pmatrix}
-1\\
--1\\
-1\\
-0
-\end{pmatrix}+t\begin{pmatrix}
-2\\
--1\\
-0\\
-1
-\end{pmatrix}$$
-
-לסיכום, מצאנו קבוצה פורשת עבור $\mathop{\mathrm{N}}(A)$: $$\Set{\begin{pmatrix}
-1\\
--1\\
-1\\
-0
-\end{pmatrix},\begin{pmatrix}
-2\\
--1\\
-0\\
-1
-\end{pmatrix}}$$
-:::
-
 ## תלות ואי-תלות לינארית
 
 הכרנו את ההגדרה של שני וקטורים קו-לינאריים, שהיא למעשה מקרה פרטי של הגדרה כללית יותר שנקראת תלות לינארית.
@@ -2103,6 +1776,290 @@ B=\begin{pmatrix}
 0 & 0 \\
 0 & 0
 \end{pmatrix}\notin W$$ בהיעדר מטריצת האפס, $W$ בהכרח אינה תת-מרחב.
+:::
+
+## תת-מרחבים הקשורים למטריצה
+
+ההגדרה הבאה מתייחסת לתת-מרחבים שקשורים למטריצה נתונה.
+
+:::: {.definition #def-row-col}
+`\label{def:row-col}`{=latex} תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$ עם שורות $$R_1^A,...,R_m^A\in\mathbb{F}^n$$ ועמודות $$C_1^A,...,C_n^A\in\mathbb{F}^m$$ נגדיר את מרחב השורות $$,\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Span}}(R_1^A,...,R_m^A)\subseteq\mathbb{F}^n$$ ואת מרחב העמודות $$.\mathop{\mathrm{Col}}(A)=\mathop{\mathrm{Span}}(C_1^A,...,C_n^A)\subseteq\mathbb{F}^m$$
+:::
+
+::: example
+ 
+
+א. עבור $$A=\begin{pmatrix}
+    1 & 2 &3 \\
+    -1 &0 &1
+    \end{pmatrix}$$ מתקיים: $$\begin{aligned}
+    \mathop{\mathrm{Row}}(A)&=\mathop{\mathrm{Span}}((1,2,3),(-1,0,1)) \\
+    \mathop{\mathrm{Col}}(A)&=\mathop{\mathrm{Span}}\left(\begin{pmatrix}1 \\ -1\end{pmatrix},\begin{pmatrix}2 \\ 0\end{pmatrix},\begin{pmatrix}3 \\ 1\end{pmatrix}\right)
+    \end{aligned}$$
+
+ב. $$B=\begin{pmatrix}
+    i & 0  \\
+    2 &1+i \\
+    3 & -i
+    \end{pmatrix}$$ מתקיים: $$\begin{aligned}
+    \mathop{\mathrm{Row}}(B)&=\mathop{\mathrm{Span}}((i,0),(2,1+i),(3,-i)) \\
+    \mathop{\mathrm{Col}}(B)&=\mathop{\mathrm{Span}}\left(\begin{pmatrix}i \\ 2 \\ 3\end{pmatrix},\begin{pmatrix}0 \\ 1+i \\-i\end{pmatrix}\right)
+    \end{aligned}$$
+:::
+
+הטענה הבאה מראה את הקשר בין מרחב עמודות לממ\"ל.
+
+:::: {.proposition #prp-column-space}
+*`\label{prop:column-space}`{=latex} תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$. אז לכל וקטור עמודה $w\in\mathbb{F}^m$ מתקיים $w\in\mathop{\mathrm{Col}}(A)$ אם ורק אם קיים פתרון לממ\"ל $Ax=w$.*
+:::
+
+::: proof
+ נכתוב את $A$ בהתאם לוקטורי העמודות שלה:
+
+$$A=\begin{pmatrix}
+| & | & & | \\
+v_1 & v_2 & \cdots & v_n \\
+| & | & & |
+\end{pmatrix}$$
+
+יהי $w\in\mathbb{F}^m$. אז לפי ההגדרה, מתקיים $$\begin{aligned}
+w\in\mathop{\mathrm{Col}}(A)
+&\iff
+\exists \alpha_1,\ldots,\alpha_n\in\mathbb{F}:\
+w=\alpha_1v_1+\cdots+\alpha_nv_n
+\\[6pt]
+&\iff\exists x=
+\begin{pmatrix}
+\alpha_1\\
+\vdots\\
+\alpha_n
+\end{pmatrix}
+\in\mathbb{F}^n :\
+Ax=w
+\end{aligned}$$
+
+השתמשנו בחישוב $$.Ax=\begin{pmatrix}
+| & | & & | \\
+v_1 & v_2 & \cdots & v_n \\
+| & | & & |
+\end{pmatrix}\begin{pmatrix}
+\alpha_1\\
+\vdots\\
+\alpha_n
+\end{pmatrix}=\alpha_1v_1+...+\alpha_nv_n$$
+:::
+
+::: example
+תהי $$.A=
+\begin{pmatrix}
+1 & 0 & 1\\
+0 & 1 & 1\\
+1 & 1 & 2\\
+0 & 0 & 1
+\end{pmatrix}$$ נבדוק איזה וקטור (אם בכלל) מהוקטורים הבאים שייך ל- $\mathop{\mathrm{Col}}(A)$: $$w_1=
+\begin{pmatrix}
+1\\
+1\\
+2\\
+0
+\end{pmatrix},
+\quad
+w_2=
+\begin{pmatrix}
+0\\
+0\\
+1\\
+0
+\end{pmatrix}$$
+
+לפי טענה -@prp-column-space צריך לפתור שתי ממ\"ליות: $Ax=w_1$ מחד ו- $Ax=w_2$ מאידך. כדי לחסוך עבודה, ניתן לפתור את שתיהן במקביל ע\"י מטריצה מורחבת $(A|w_1|w_2)$ ודירוג לפי $A$:
+
+$$\begin{aligned}
+&\left(
+\begin{array}{ccc|c|c}
+1 & 0 & 1 & 1 & 0\\
+0 & 1 & 1 & 1 & 0\\
+1 & 1 & 2 & 2 & 1\\
+0 & 0 & 1 & 0 & 0
+\end{array}
+\right)
+\xrightarrow{R_3 - R_1\to R_3}
+\left(
+\begin{array}{ccc|c|c}
+1 & 0 & 1 & 1 & 0\\
+0 & 1 & 1 & 1 & 0\\
+0 & 1 & 1 & 1 & 1\\
+0 & 0 & 1 & 0 & 0
+\end{array}
+\right)
+\\[8pt]
+&\xrightarrow{R_3 - R_2\to R_3}
+\left(
+\begin{array}{ccc|c|c}
+1 & 0 & 1 & 1 & 0\\
+0 & 1 & 1 & 1 & 0\\
+0 & 0 & 0 & 0 & 1\\
+0 & 0 & 1 & 0 & 0
+\end{array}
+\right)
+\xrightarrow{R_3 \leftrightarrow R_4}
+\left(
+\begin{array}{ccc|c|c}
+1 & 0 & 1 & 1 & 0\\
+0 & 1 & 1 & 1 & 0\\
+0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 1
+\end{array}
+\right)
+\\[8pt]
+&\xrightarrow{R_1 - R_3\to R_1}
+\left(
+\begin{array}{ccc|c|c}
+1 & 0 & 0 & 1 & 0\\
+0 & 1 & 1 & 1 & 0\\
+0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 1
+\end{array}
+\right)
+\xrightarrow{R_2 - R_3\to R_2}
+\left(
+\begin{array}{ccc|c|c}
+1 & 0 & 0 & 1 & 0\\
+0 & 1 & 0 & 1 & 0\\
+0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 1
+\end{array}
+\right)
+\end{aligned}$$
+
+המסקנה היא שלא קיים פתרון לממ\"ל $Ax=w_2$ כי יש שורת סתירה, ולכן $w_2\notin\mathop{\mathrm{Col}}(A)$. מנגד, קיים פתרון לממ\"ל $Ax=w_1$. לכן, מתקיים $w_1\in\mathop{\mathrm{Col}}(A)$ ואף מצאנו את הסקלרים בתנאי הפרישה: $$\begin{pmatrix}
+1\\
+1\\
+2\\
+0
+\end{pmatrix}=1\cdot\begin{pmatrix}
+1 \\
+0 \\
+1 \\
+0
+\end{pmatrix}+1\cdot\begin{pmatrix}
+0 \\
+1 \\
+1 \\
+0 
+\end{pmatrix} +0\cdot\begin{pmatrix}
+1\\
+1\\
+2\\
+1
+\end{pmatrix}$$
+:::
+
+עד כה ראינו שתי דרכים לייצר תת-מרחב של $\mathbb{F}^n$: ע\"י לקיחת $\mathop{\mathrm{Span}}$ של וקטורים נתונים, או ע\"י לקיחת מרחב הפתרונות של ממ\"ל הומוגנית. בתרגיל הבא נראה איך לעבור מההצגה השנייה להצגה הראשונה.
+
+::: exercise
+מצאו קבוצה פורשת עבור $\mathop{\mathrm{N}}(A)$ כאשר $$.A=\begin{pmatrix}
+1 & 1 & 0 & -1 \\
+0 & 1 & 1 & 1 \\
+1 & 2 & 1 & 0
+\end{pmatrix}$$
+:::
+
+::: {.callout-note collapse="true" title="פתרון"}
+נפתור את הממ\"ל ההומוגנית $Ax=\underline{0}$ ע\"י דירוג, ונראה שהוקטורים הפורשים מסתתרים בתוך ההצגה הפרמטרית.
+
+$$\begin{pmatrix}
+1 & 1 & 0 & -1 \\
+0 & 1 & 1 & 1 \\
+1 & 2 & 1 & 0
+\end{pmatrix}\xrightarrow{R_3-R_1-R_2\to R_3}\begin{pmatrix}
+1 & 1 & 0 &-1\\
+0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{pmatrix}\xrightarrow{R_1-R_2\to R_1}\begin{pmatrix}
+1 & 0 & -1 & -2\\
+0 & 1 & 1 & 1\\
+0 & 0 & 0 & 0
+\end{pmatrix}$$
+
+לפי הדירוג נובע כי $$.\begin{pmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4
+\end{pmatrix}\in \mathop{\mathrm{N}}(A) \iff \begin{cases}
+    x_1-x_3-2x_4&=0 \\
+    x_2+x_3+x_4&=0
+\end{cases}$$
+
+המשתנים החופשיים הם $x_3,x_4$. נציב $(x_3,x_4)=(s,t)$ ונקבל $$\begin{aligned}
+\mathop{\mathrm{N}}(A)&=\left\{\begin{pmatrix}
+s+2t\\
+-s-t\\
+s\\
+t
+\end{pmatrix}\middle|s,t\in\mathbb{R}\right\}=\left\{s\begin{pmatrix}
+1\\
+-1\\
+1\\
+0
+\end{pmatrix}+t\begin{pmatrix}
+2\\
+-1\\
+0\\
+1
+\end{pmatrix}\middle|s,t\in\mathbb{R}\right\}\\
+&=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
+1\\
+-1\\
+1\\
+0
+\end{pmatrix},\begin{pmatrix}
+2\\
+-1\\
+0\\
+1
+\end{pmatrix}\right)
+\end{aligned}$$
+
+השוויון השני קל לבדיקה, אבל הדרך להגיע אליו היא \"לפרק\" את הוקטור $\begin{pmatrix}s+2t\\-s-t\\s\\t\end{pmatrix}$ לסכום של שני וקטורים כך שבכל אחד יופיע רק פרמטר אחד, ואז מכל וקטור אפשר להוציא את הפרמטר המתאים החוצה לפי כפל בסקלר. הנה ההסבר המלא: $$\begin{pmatrix}
+s+2t\\
+-s-t\\
+s\\
+t
+\end{pmatrix}=\begin{pmatrix}
+s\\
+-s\\
+s\\
+0
+\end{pmatrix}+\begin{pmatrix}
+2t\\
+-t\\
+0\\
+t
+\end{pmatrix}=s\begin{pmatrix}
+1\\
+-1\\
+1\\
+0
+\end{pmatrix}+t\begin{pmatrix}
+2\\
+-1\\
+0\\
+1
+\end{pmatrix}$$
+
+לסיכום, מצאנו קבוצה פורשת עבור $\mathop{\mathrm{N}}(A)$: $$\Set{\begin{pmatrix}
+1\\
+-1\\
+1\\
+0
+\end{pmatrix},\begin{pmatrix}
+2\\
+-1\\
+0\\
+1
+\end{pmatrix}}$$
 :::
 
 ## קוארדינטות
