@@ -1778,12 +1778,12 @@ B=\begin{pmatrix}
 \end{pmatrix}\notin W$$ בהיעדר מטריצת האפס, $W$ בהכרח אינה תת-מרחב.
 :::
 
-## תת-מרחבים הקשורים למטריצה
+## מרחבים הקשורים למטריצה
 
-ההגדרה הבאה מתייחסת לתת-מרחבים שקשורים למטריצה נתונה.
+ההגדרה הבאה מתייחסת למרחבים שקשורים למטריצה נתונה (שהם למעשה תת-מרחבים של מרחבים מוכרים).
 
 :::: {.definition #def-row-col}
-`\label{def:row-col}`{=latex} תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$ עם שורות $$R_1^A,...,R_m^A\in\mathbb{F}^n$$ ועמודות $$C_1^A,...,C_n^A\in\mathbb{F}^m$$ נגדיר את מרחב השורות $$,\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Span}}(R_1^A,...,R_m^A)\subseteq\mathbb{F}^n$$ ואת מרחב העמודות $$.\mathop{\mathrm{Col}}(A)=\mathop{\mathrm{Span}}(C_1^A,...,C_n^A)\subseteq\mathbb{F}^m$$
+`\label{def:row-col}`{=latex} תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$ עם שורות $$R_1^A,...,R_m^A\in\mathbb{F}^n$$ ועמודות $$.C_1^A,...,C_n^A\in\mathbb{F}^m$$ נגדיר את מרחב השורות $$,\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Span}}(R_1^A,...,R_m^A)\subseteq\mathbb{F}^n$$ ואת מרחב העמודות $$.\mathop{\mathrm{Col}}(A)=\mathop{\mathrm{Span}}(C_1^A,...,C_n^A)\subseteq\mathbb{F}^m$$
 :::
 
 ::: example
