@@ -117,19 +117,6 @@
 :::
 
 ::: example
-כל וקטור $(a,b)\in\mathbb{R}^2$ הוא צירוף לינארי של הוקטורים $(1,0),(0,1)$ כי מתקיים $$.(a,b)=a(1,0)+b(0,1)$$
-:::
-
-<figure id="fig:Span2D">
-<img src="images/Span2D.png" style="width:60.0%" />
-<figcaption>פרישה של שני וקטורים לדוגמה במישור ע"י שני וקטורים נתונים, כאשר בכחול מסומן הישר הנפרש ע"י וקטור אחד</figcaption>
-</figure>
-
-::: {#fig:Span2DSimulation .figure}
-![](simulations/Span2D.html?embed=1){width=720 height=720}
-:::
-
-::: example
 $(1,2,3,0)\in \mathbb{R}^4$ הוא צ\"ל של שלושת הוקטורים $$(1,0,0,0),(0,1,1,0),(0,0,1,0)$$ כי מתקיים $$.(1,2,3,0)=1(1,0,0,0)+2(0,1,1,0)+1(0,0,1,0)$$
 :::
 
@@ -153,31 +140,25 @@ $(1,2,3,0)\in \mathbb{R}^4$ הוא צ\"ל של שלושת הוקטורים $$(1,
 רצוי לזכור את $\forall$ (לכל) ו- $\exists$ (קיים/קיימים) כי לפעמים הם מקצרים את הכתיבה. הם נקראים כמתים, במובן של \"כימות\" הטענה לפי התייחסות לכל הקבוצה או רק לאיבר/איברים מסוימים.
 :::
 
+::: example
+כל וקטור $(a,b)\in\mathbb{R}^2$ הוא צירוף לינארי של הוקטורים $(1,0),(0,1)$ כי מתקיים $$.(a,b)=a(1,0)+b(0,1)$$
+:::
+
+<figure id="fig:Span2D">
+<img src="images/Span2D.png" style="width:60.0%" />
+<figcaption>פרישה של שני וקטורים לדוגמה במישור ע"י שני וקטורים נתונים, כאשר בכחול מסומן הישר הנפרש ע"י וקטור אחד</figcaption>
+</figure>
+
+::: {#fig:Span2DSimulation .figure}
+![](simulations/Span2D.html?embed=1){width=720 height=720}
+:::
+
 <figure id="fig:Span3D">
 <img src="images/Span3D.png" style="width:60.0%" />
 <figcaption>פרישה של שני וקטורים לדוגמה במרחב ע"י שלושה וקטורים נתונים, כאשר בכחול מסומן הישר הנפרש ע"י וקטור אחד ובירוק מסומן המישור הנפרש ע"י שני וקטורים</figcaption>
 </figure>
 ::: {#fig:Span3DSimulation .figure}
 ![](simulations/Span3D.html?embed=1){width=720 height=720}
-:::
-
-:::: {.proposition #prp-span-subspace}
-*`\label{prop:span-subspace}`{=latex} יהי $V$ מ\"ו מעל $\mathbb{F}$, ויהיו $v_1,v_2,...,v_k\in V$. אז $\mathop{\mathrm{Span}}(v_1,...,v_k)$ הוא תת-מרחב של $V$ המקיים $$.v_1,...,v_k\in \mathop{\mathrm{Span}}(v_1,...,v_k)$$*
-:::
-
-::: proof
- נבדוק את התנאים של טענה -@prp-subspace.
-
--   קיום וקטור האפס: מתקיים $$.0_V=0\cdot v_1+0\cdot v_2+...+0\cdot v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)$$
-
--   סגירות לחיבור: יהיו $w_1,w_2\in\mathop{\mathrm{Span}}(v_1,...,v_k)$. קיימים סקלרים $\alpha_1,...,\alpha_k,\beta_1,...,\beta_k\in\mathbb{F}$ כך ש- $$.w_1=\alpha_1v_1+...+\alpha_kv_k,\quad w_2=\beta_1v_1+...\beta_kv_k$$ מתקיים: $$\begin{aligned}
-    w_1+w_2&=(\alpha_1v_1+...+\alpha_kv_k)+(\beta_1v_1+...+\beta_kv_k)\\
-    &=(\alpha_1+\beta_1)v_1+...+(\alpha_k+\beta_k)v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)
-    \end{aligned}$$
-
--   סגירות לכפל בסקלר: לכל $\gamma\in\mathbb{F}$ מתקיים $$.\gamma w_1=\gamma(\alpha_1v_1+...+\alpha_kv_k)=(\gamma\alpha_1)v_1+...+(\gamma\alpha_k)v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)$$
-
-לכן, $\mathop{\mathrm{Span}}(v_1,...,v_k)$ הוא תת-מרחב של $V$. נותר לבדוק כי $v_1,...,v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)$. אכן, יש צירוף לינארי טבעי לכל $1\leq j\leq k$ מהצורה $$.v_j=0\cdot v_1+...+0\cdot v_{j-1}+1\cdot v_j+0\cdot v_{j+1}+...+0\cdot v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)$$
 :::
 
 ::: example
@@ -189,18 +170,6 @@ $(1,2,3,0)\in \mathbb{R}^4$ הוא צ\"ל של שלושת הוקטורים $$(1,
 \alpha-\beta&=0 \\
 \phantom{\alpha+\beta}\,\gamma&=2
 \end{cases}$$ לממ\"ל יש פתרון יחיד: $\alpha=\beta=\gamma=2$. ואכן, מתקיים $$.(4,2,0,2)=2(1,0,1,0)+2(1,0,-1,0)+2(0,1,0,1)$$
-:::
-
-הטענה הבאה מראה שניתן לאפיין את $\mathop{\mathrm{Span}}(v_1,...,v_k)$ כתת-המרחב הקטן ביותר שמכיל את $\Set{v_1,...,v_k}$. הכוונה ב\"קטן ביותר\" היא שכל תת-מרחב אחר שמכיל את $\Set{v_1,...,v_k}$ בהכרח מכיל את $\mathop{\mathrm{Span}}(v_1,...,v_k)$.
-
-:::: {.proposition #prp-vector-span}
-*`\label{prop:vector-span}`{=latex} יהי $W$ תת-מרחב של מ\"ו $V$ מעל $\mathbb{F}$. אז לכל $v_1,...,v_k\in V$ מתקיים $$.v_1,...,v_k\in W \iff \mathop{\mathrm{Span}}(v_1,...,v_k)\subseteq W$$*
-:::
-
-::: proof
- הכיוון $\implies$: נניח כי $v_1,...,v_k\in W$. אז לכל $\alpha_1,...,\alpha_k\in\mathbb{F}$ מתקיים: $$\forall 1\leq j\leq k\quad \alpha_jv_j\in W$$ מסגירות לכפל בסקלר. לכן, נובע מסגירות לחיבור כי $$.\alpha_1v_1+...+\alpha_kv_k\in W$$ הראינו שכל צירוף לינארי של $v_1,...,v_k$ שייך ל- $W$, כלומר $$.\mathop{\mathrm{Span}}(v_1,...,v_k)\subseteq W$$
-
-הכיוון $\impliedby$: נניח כי $\mathop{\mathrm{Span}}(v_1,...,v_k)\subseteq W$. לפי טענה -@prp-span-subspace מתקיים $$,v_1,...,v_k\in \mathop{\mathrm{Span}}(v_1,...,v_k)$$ ולכן $$.v_1,...,v_k\in W$$
 :::
 
 ::: definition
@@ -2012,6 +1981,38 @@ $W=\Set{(x,y,z)\in\mathbb{R}^3|x+y+z=0}$ היא תת-מרחב של $\mathbb{R}^3
 קיום וקטור האפס: מתקיים $(0,0,0,0)\in W$ כי $(0,0,0)\in\mathbb{R}^3$.
 
 סגירות לחיבור: יהיו $w_1=(x_1,y_1,z_1,0),w_2=(x_2,y_2,z_2,0)\in W$. אז מתקיים $$.w_1+w_2=(x_1+x_2,y_1+y_2,z_1+z_2,0)\in W$$ סגירות לכפל בסקלר: לכל $\alpha\in\mathbb{R}$ מתקיים $$.\alpha(x_1,y_1,z_1,0)=(\alpha x_1,\alpha y_1,\alpha z_1,0)\in W$$
+:::
+
+:::: {.proposition #prp-span-subspace}
+*`\label{prop:span-subspace}`{=latex} יהי $V$ מ\"ו מעל $\mathbb{F}$, ויהיו $v_1,v_2,...,v_k\in V$. אז $\mathop{\mathrm{Span}}(v_1,...,v_k)$ הוא תת-מרחב של $V$ המקיים $$.v_1,...,v_k\in \mathop{\mathrm{Span}}(v_1,...,v_k)$$*
+:::
+
+::: proof
+ נבדוק את התנאים של טענה -@prp-subspace.
+
+-   קיום וקטור האפס: מתקיים $$.0_V=0\cdot v_1+0\cdot v_2+...+0\cdot v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)$$
+
+-   סגירות לחיבור: יהיו $w_1,w_2\in\mathop{\mathrm{Span}}(v_1,...,v_k)$. קיימים סקלרים $\alpha_1,...,\alpha_k,\beta_1,...,\beta_k\in\mathbb{F}$ כך ש- $$.w_1=\alpha_1v_1+...+\alpha_kv_k,\quad w_2=\beta_1v_1+...\beta_kv_k$$ מתקיים: $$\begin{aligned}
+    w_1+w_2&=(\alpha_1v_1+...+\alpha_kv_k)+(\beta_1v_1+...+\beta_kv_k)\\
+    &=(\alpha_1+\beta_1)v_1+...+(\alpha_k+\beta_k)v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)
+    \end{aligned}$$
+
+-   סגירות לכפל בסקלר: לכל $\gamma\in\mathbb{F}$ מתקיים $$.\gamma w_1=\gamma(\alpha_1v_1+...+\alpha_kv_k)=(\gamma\alpha_1)v_1+...+(\gamma\alpha_k)v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)$$
+
+לכן, $\mathop{\mathrm{Span}}(v_1,...,v_k)$ הוא תת-מרחב של $V$. נותר לבדוק כי $v_1,...,v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)$. אכן, יש צירוף לינארי טבעי לכל $1\leq j\leq k$ מהצורה $$.v_j=0\cdot v_1+...+0\cdot v_{j-1}+1\cdot v_j+0\cdot v_{j+1}+...+0\cdot v_k\in\mathop{\mathrm{Span}}(v_1,...,v_k)$$
+:::
+
+
+הטענה הבאה מראה שניתן לאפיין את $\mathop{\mathrm{Span}}(v_1,...,v_k)$ כתת-המרחב הקטן ביותר שמכיל את $\Set{v_1,...,v_k}$. הכוונה ב\"קטן ביותר\" היא שכל תת-מרחב אחר שמכיל את $\Set{v_1,...,v_k}$ בהכרח מכיל את $\mathop{\mathrm{Span}}(v_1,...,v_k)$.
+
+:::: {.proposition #prp-vector-span}
+*`\label{prop:vector-span}`{=latex} יהי $W$ תת-מרחב של מ\"ו $V$ מעל $\mathbb{F}$. אז לכל $v_1,...,v_k\in V$ מתקיים $$.v_1,...,v_k\in W \iff \mathop{\mathrm{Span}}(v_1,...,v_k)\subseteq W$$*
+:::
+
+::: proof
+ הכיוון $\implies$: נניח כי $v_1,...,v_k\in W$. אז לכל $\alpha_1,...,\alpha_k\in\mathbb{F}$ מתקיים: $$\forall 1\leq j\leq k\quad \alpha_jv_j\in W$$ מסגירות לכפל בסקלר. לכן, נובע מסגירות לחיבור כי $$.\alpha_1v_1+...+\alpha_kv_k\in W$$ הראינו שכל צירוף לינארי של $v_1,...,v_k$ שייך ל- $W$, כלומר $$.\mathop{\mathrm{Span}}(v_1,...,v_k)\subseteq W$$
+
+הכיוון $\impliedby$: נניח כי $\mathop{\mathrm{Span}}(v_1,...,v_k)\subseteq W$. לפי טענה -@prp-span-subspace מתקיים $$,v_1,...,v_k\in \mathop{\mathrm{Span}}(v_1,...,v_k)$$ ולכן $$.v_1,...,v_k\in W$$
 :::
 
 תת-מרחב הוא תת-קבוצה של מ\"ו שיש לה \"התנהגות טובה\" כפי שראינו. בפרק [-@sec-systems] ראינו התנהגות דומה בהקשר של פתרונות של ממ\"ל הומוגנית. מרוב חשיבותה ושכיחותה של קבוצת פתרונות של ממ\"ל הומוגנית, נקדיש לה סימון משלה.
