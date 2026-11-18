@@ -264,15 +264,6 @@
         \end{aligned}$$ אין צורך בקבוצת כל הפתרונות כדי לזהות תלות לינארית. כבר רואים שהפתרון אינו יחיד, ואם למשל נציב $\alpha_4=-2$ נקבל משוואה המתארת תלות לינארית: $$\alpha_1=\alpha_2=\alpha_3=1 \implies (1,1,0)+(0,1,1)+(1,0,1)-2(1,1,1)=(0,0,0)$$ לעומת זאת, הדירוג לעיל מראה שתת-הקבוצה $\Set{(1,1,0),(0,1,1),(1,0,1)}$ היא בת\"ל. הסיבה לכך היא שאם מתעלמים מהוקטור הרביעי בקבוצה המקורית, אז לפי הדירוג מתקבלת מטריצת היחידה $I_3$. לכן: $$\alpha_1(1,1,0)+\alpha_2(0,1,1)+\alpha_3(1,0,1)=(0,0,0) \iff \alpha_1=\alpha_2=\alpha_3=0$$
 :::
 
-<figure id="fig:LinearIndependence">
-<img src="images/LinearIndependence.png" style="width:40.0%" />
-<figcaption>תלות לינארית בין ארבעה וקטורים במרחב, כאשר אף שלושה אינם על מישור אחד</figcaption>
-</figure>
-
-::: {#fig:LinearIndependenceSimulation .figure}
-![](simulations/LinearIndependence.html?embed=1){width=720 height=720}
-:::
-
 ::: exercise
 במ\"ו $V$ מעל $\mathbb{F}$, האם ייתכן שקבוצה של וקטור יחיד היא ת\"ל?
 :::
@@ -2504,7 +2495,7 @@ $$\begin{aligned}
 \end{aligned}$$ לפי משפט -@thm-invertible2, וקטורי הקוארדינטות (עמודות המטריצה) לא מהווים בסיס ל- $\mathbb{R}^4$. לפי משפט -@thm-test-by-coordinates, נובע כי הקבוצה המקורית של המטריצות לא מהווה בסיס ל- $\mathbb{M}_{2\times 2}(\mathbb{R})$. יותר מכך, קבוצה זו אינה בת\"ל וגם אינה פורשת.
 :::
 
-## העשרה: פרישה במישור ובמרחב
+## העשרה: פרישה ותלות לינארית במישור ובמרחב
 
 <figure id="fig:Span2D">
 <img src="images/Span2D.png" style="width:60.0%" />
@@ -2521,4 +2512,13 @@ $$\begin{aligned}
 </figure>
 ::: {#fig:Span3DSimulation .figure}
 ![](simulations/Span3D.html?embed=1){width=720 height=720}
+:::
+
+<figure id="fig:LinearIndependence">
+<img src="images/LinearIndependence.png" style="width:40.0%" />
+<figcaption>תלות לינארית בין ארבעה וקטורים במרחב, כאשר אף שלושה אינם על מישור אחד</figcaption>
+</figure>
+
+::: {#fig:LinearIndependenceSimulation .figure}
+![](simulations/LinearIndependence.html?embed=1){width=720 height=720}
 :::
