@@ -153,23 +153,6 @@
 \end{cases}$$ לממ\"ל יש פתרון יחיד: $\alpha=\beta=\gamma=2$. ואכן, מתקיים $$.(4,2,0,2)=2(1,0,1,0)+2(1,0,-1,0)+2(0,1,0,1)$$
 :::
 
-<figure id="fig:Span2D">
-<img src="images/Span2D.png" style="width:60.0%" />
-<figcaption>פרישה של שני וקטורים לדוגמה במישור ע"י שני וקטורים נתונים, כאשר בכחול מסומן הישר הנפרש ע"י וקטור אחד</figcaption>
-</figure>
-
-::: {#fig:Span2DSimulation .figure}
-![](simulations/Span2D.html?embed=1){width=720 height=720}
-:::
-
-<figure id="fig:Span3D">
-<img src="images/Span3D.png" style="width:60.0%" />
-<figcaption>פרישה של שני וקטורים לדוגמה במרחב ע"י שלושה וקטורים נתונים, כאשר בכחול מסומן הישר הנפרש ע"י וקטור אחד ובירוק מסומן המישור הנפרש ע"י שני וקטורים</figcaption>
-</figure>
-::: {#fig:Span3DSimulation .figure}
-![](simulations/Span3D.html?embed=1){width=720 height=720}
-:::
-
 ::: definition
 יהי $V$ מ\"ו מעל $\mathbb{F}$. נאמר ש- $V$ נוצר סופית אם קיימים $v_1,...,v_k\in V$ כך ש- $V=\mathop{\mathrm{Span}}(v_1,...,v_k)$. במקרה זה גם נאמר שהקבוצה $\Set{v_1,...,v_k}$ פורשת את $V$. ניתן גם לומר (באופן פחות פורמלי) שהוקטורים $v_1,...,v_k$ פורשים את $V$.
 :::
@@ -2519,4 +2502,23 @@ $$\begin{aligned}
 \end{pmatrix}\\
 &=0
 \end{aligned}$$ לפי משפט -@thm-invertible2, וקטורי הקוארדינטות (עמודות המטריצה) לא מהווים בסיס ל- $\mathbb{R}^4$. לפי משפט -@thm-test-by-coordinates, נובע כי הקבוצה המקורית של המטריצות לא מהווה בסיס ל- $\mathbb{M}_{2\times 2}(\mathbb{R})$. יותר מכך, קבוצה זו אינה בת\"ל וגם אינה פורשת.
+:::
+
+## העשרה: פרישה במישור ובמרחב
+
+<figure id="fig:Span2D">
+<img src="images/Span2D.png" style="width:60.0%" />
+<figcaption>פרישה של שני וקטורים לדוגמה במישור ע"י שני וקטורים נתונים, כאשר בכחול מסומן הישר הנפרש ע"י וקטור אחד</figcaption>
+</figure>
+
+::: {#fig:Span2DSimulation .figure}
+![](simulations/Span2D.html?embed=1){width=720 height=720}
+:::
+
+<figure id="fig:Span3D">
+<img src="images/Span3D.png" style="width:60.0%" />
+<figcaption>פרישה של שני וקטורים לדוגמה במרחב ע"י שלושה וקטורים נתונים, כאשר בכחול מסומן הישר הנפרש ע"י וקטור אחד ובירוק מסומן המישור הנפרש ע"י שני וקטורים</figcaption>
+</figure>
+::: {#fig:Span3DSimulation .figure}
+![](simulations/Span3D.html?embed=1){width=720 height=720}
 :::
