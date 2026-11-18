@@ -215,12 +215,16 @@
 
 לגבי שני וקטורים, תלות לינארית מקבלת צורה די פשוטה: לכל $v_1,v_2\in V$ ולכל $\alpha_1,\alpha_2\in\mathbb{F}$ כך שלא כולם $0$, נניח תחילה $\alpha_2\neq 0$ ונקבל $$,\alpha_1v_1+\alpha_2v_2=0_V \iff  v_2=-\frac{\alpha_1}{\alpha_2}v_1$$ או לחילופין, אם $\alpha_1\neq 0$ נקבל $$.\alpha_1v_1+\alpha_2v_2=0_V \iff  v_1=-\frac{\alpha_2}{\alpha_1}v_2$$
 
+בכל מקרה של תלות לינארית בין שני וקטורים, אחד מהם הוא כפולה בסקלר של השני.
+
 :::
 
 ::: example
  
 
-א. ב- $\mathbb{R}^3$ הקבוצה $\Set{(1,2,3),(3,6,9)}$ היא ת\"ל כי הוקטורים קו-לינאריים. באופן שקול (לפי ההגדרה החדשה), קיים צ\"ל לא טריוויאלי שלהם שמתאפס, למשל: $$3\cdot(1,2,3)+(-1)\cdot(3,6,9)=(0,0,0)$$
+א. ב- $\mathbb{R}^3$ הקבוצה $\Set{(1,2,3),(3,6,9)}$ היא ת\"ל כי קיים צ\"ל לא טריוויאלי שלהם שמתאפס, למשל: $$3\cdot(1,2,3)+(-1)\cdot(3,6,9)=(0,0,0)$$
+
+או באופן שקול: מתקיים $(3,6,9)=3\cdot(1,2,3)$.
 
 ב. ב- $\mathbb{R}^3$ נסתכל על הקבוצה $\Set{(1,1,0),(0,1,1),(1,0,1),(1,1,1)}$ נראה כי היא ת\"ל: נניח שקיימים $\alpha_1,\alpha_2,\alpha_3,\alpha_4\in\mathbb{R}$ כך ש- $$\begin{aligned}
     \alpha_1(1,1,0)+\alpha_2(0,1,1)+\alpha_3(1,0,1)+\alpha_4(1,1,1)&=(0,0,0) \\\iff \begin{pmatrix}
@@ -1018,550 +1022,6 @@ $$\begin{aligned}
 אין צורך בדירוג קנוני כי כבר ניתן לקבוע שקיים פתרון (לא יחיד), ולכן נובע כי $W_1\supseteq W_2$. בשביל הכיוון $W_1\subseteq W_2$ לכאורה צריך לעשות דירוג נוסף, כאשר העמודות שמתאימות ל- $v_1+v_4,v_2+v_3$ יהיו בצד שמאל. אבל יש קיצור דרך: נראה כי $\dim(W_1)=\dim(W_2)$ ואז ינבע כי $W_1=W_2$ לפי מסקנה -@cor-subspace-dim. ובכן, הדירוג הקודם כבר מראה זאת כי בלי העמודה הימנית, קיבלנו דירוג עבור הוקטורים בהגדרת $W_1$. העמודה השלישית היא צ\"ל של שתי העמודות הראשונות, שמהוות קבוצה בת\"ל. לכן, הקבוצה הבאה היא בסיס ל- $W_1$: $$\Set{v_1+v_2+v_3+v_4,v_1-v_2-v_3+v_4}$$ אז $\dim(W_1)=2$. באופן דומה, אם נתמקד רק בשתי העמודות הימניות, הדירוג מראה כי $\Set{v_1+v_4,v_2+v_3}$ היא בסיס ל- $W_2$. לכן מתקיים $\dim(W_2)=2=\dim(W_1)$, ומכאן $W_2=W_1$.
 :::
 
-### משפט הדרגה
-
-הדוגמה הבאה היא הכנה לקראת משפט שיתאר את הקשר בין המימדים של תת-מרחבים הקשורים למטריצה: מרחב השורות, מרחב העמודות ומרחב הפתרונות.
-
-::: example
-תהי $$.A=\begin{pmatrix}
-1 & 2 & 0 & 3 \\
-2 & 1 & -1 & 0 \\
-5 & 4 & -2 & 3 \\
-0 & -3 & -1 & -6
-\end{pmatrix}$$
-
-נחשב את המימדים של $\mathop{\mathrm{N}}(A),\mathop{\mathrm{Col}}(A),\mathop{\mathrm{Row}}(A)$ ע\"י מציאת בסיסים. נדרג את $A$ ונקבל
-
-$$\begin{aligned}
-&\begin{pmatrix}
-1 & 2 & 0 & 3 \\
-2 & 1 & -1 & 0 \\
-5 & 4 & -2 & 3 \\
-0 & -3 & -1 & -6
-\end{pmatrix}
-\xrightarrow{
-\substack{
-R_2 - 2R_1 \to R_2\\
-R_3 - 5R_1 \to R_3
-}
-}
-\begin{pmatrix}
-1 & 2 & 0 & 3 \\
-0 & -3 & -1 & -6 \\
-0 & -6 & -2 & -12 \\
-0 & -3 & -1 & -6
-\end{pmatrix} \\
-\xrightarrow{
-\substack{
-R_3 - 2R_2 \to R_3 \\
-R_4 - R_2 \to R_4
-}
-}
-&\begin{pmatrix}
-1 & 2 & 0 & 3 \\
-0 & -3 & -1 & -6 \\
-0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0
-\end{pmatrix}\xrightarrow{-\frac{1}{3}R_2\to R_2}
-\begin{pmatrix}
-1 & 2 & 0 & 3 \\
-0 & 1 & \frac{1}{3} & 2 \\
-0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0
-\end{pmatrix} \\
-\xrightarrow{R_1-2R_2\to R_1}
-&\begin{pmatrix}
-1 & 0 & -\frac{2}{3} & -1 \\
-0 & 1 & \frac{1}{3} & 2 \\
-0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0
-\end{pmatrix}
-\end{aligned}$$
-
-יש שני איברים מובילים בשתי העמודות הראשונות, ולכן במטריצה המקורית שתי העמודות האחרונות הן צ\"ל של שתי העמודות הראשונות. בנוסף, שתי העמודות הראשונות הן בת\"ל. אז הקבוצה $$\Set{\begin{pmatrix}
-1 \\
-2 \\
-5\\
-0
-\end{pmatrix},\begin{pmatrix}
-2 \\
-1 \\
-4\\
--3
-\end{pmatrix}}$$ היא בסיס ל- $\mathop{\mathrm{Col}}(A)$, ולכן $\dim(\mathop{\mathrm{Col}}(A))=2$.
-
-לגבי מרחב השורות: הדירוג לא משנה אותו, ולכן ניתן להשתמש בשורות המטריצה המדורגת קנונית (בלי שורות האפסים). אז $\Set{(1,0,-\frac{2}{3},-1),(0,1,\frac{1}{3},2)}$ היא בסיס ל- $\mathop{\mathrm{Row}}(A)$, ולכן $\dim(\mathop{\mathrm{Row}}(A))=2$. נשים לב כי עד עכשיו שני המימדים שווים לדרגת המטריצה, וזה נכון באופן כללי לפי משפט שנוכיח בקרוב.
-
-במקרה זה מתקיים גם $\dim(\mathop{\mathrm{N}}(A))=2$, אבל הסיבה שונה. באופן אינטואיטיבי, המימד של מרחב הפתרונות אמור להיות מספר המשתנים החופשיים, שהוא ההפרש בין מספר המשתנים הכולל ובין הדרגה (מספר המשתנים התלויים). עוד לא הוכחנו את זה, אז נמצא בסיס ל- $\mathop{\mathrm{N}}(A)$. נפתור את הממ\"ל השקולה:
-
-$$\begin{cases}
-x_1-\frac{2}{3}x_3-x_4=0 \\
-x_2+\frac{1}{3}x_3+2x_4=0
-\end{cases}$$
-
-נציב $x_3=s,x_4=t$ ונקבל
-
-$$\begin{aligned}
-\mathop{\mathrm{N}}(A)&=\Set{\left(\frac{2}{3}s+t,-\frac{1}{3}s-2t,s,t\right)|s,t\in\mathbb{R}} \\
-&=\Set{s(\frac{2}{3},-\frac{1}{3},1,0)+t(1,-2,0,1)|s,t\in\mathbb{R}} \\
-&=\mathop{\mathrm{Span}}\left((\frac{2}{3},-\frac{1}{3},1,0),(1,-2,0,1)\right)
-\end{aligned}$$
-
-אז $\Set{(\frac{2}{3},-\frac{1}{3},1,0),(1,-2,0,1)}$ פורשת את $\mathop{\mathrm{N}}(A)$. קל לבדוק שהיא בת\"ל כי שני הוקטורים אינם קו-לינאריים, אבל יש דרך אחרת לראות זאת. אם נניח שקיימים $\alpha_1,\alpha_2\in\mathbb{R}$ כך ש- $$,\alpha_1(\frac{2}{3},-\frac{1}{3},1,0)+\alpha_2(1,-2,0,1)=(0,0,0,0)$$ אז לפי שתי הקוארדינטות האחרונות נקבל $\alpha_1=\alpha_2=0$. לכן, קבוצה זו היא בסיס ומתקיים $\dim(\mathop{\mathrm{N}}(A))=2$.
-:::
-
-:::: {.exercise #exr-column-dim}
-`\label{exer:column-dim}`{=latex} יהיו $\Set{v_1,...,v_k}\subseteq\mathbb{F}^n$ ו- $A\in\mathbb{M}_{n\times n}(\mathbb{F})$ הפיכה. הוכיחו כי $\Set{Av_1,...,Av_k}$ בת\"ל אם ורק אם $\Set{v_1,...,v_k}$ בת\"ל.
-:::
-
-::: {.callout-note collapse="true" title="פתרון"}
-בכיוון הראשון, נניח כי $\Set{v_1,...,v_k}$ בת\"ל ובנוסף קיימים $\alpha_1,..,\alpha_k\in\mathbb{F}$ כך ש- $$.\alpha_1Av_1+...+\alpha_kAv_k=0 \iff A(\alpha_1v_1+...+\alpha_kv_k)=\underline{0}$$ מהפיכות $A$ נובע כי $\alpha_1v_1+...+\alpha_kv_k=\underline{0}$, ומהנתון על $\Set{v_1,...,v_k}$ נובע כי בהכרח $\alpha_1=...=\alpha_k=0$. אז $\Set{Av_1,...,Av_k}$ בת\"ל.
-
-בכיוון השני (שלא דורש הפיכות), נניח כי $\Set{Av_1,...,Av_k}$ בת\"ל ובנוסף קיימים $\alpha_1,..,\alpha_k\in\mathbb{F}$ כך ש- $$.\alpha_1v_1+...+\alpha_kv_k=\underline{0}$$ נכפיל את שני האגפים ב- $A$ ונקבל $$.A(\alpha_1v_1+...+\alpha_kv_k)=A\underline{0} \iff \alpha_1Av_1+...+\alpha_kAv_k=\underline{0}$$ לכן, בהכרח מתקיים $\alpha_1=...=\alpha_k=0$ לפי ההנחה. אז $\Set{v_1,...,v_k}$ בת\"ל.
-:::
-
-:::: {.theorem #thm-rank-nullity}
-*`\label{thm:rank-nullity}`{=latex} תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$. אז מתקיים:*
-
-א. *$$\dim(\mathop{\mathrm{Row}}(A))=\dim(\mathop{\mathrm{Col}}(A))=\mathop{\mathrm{rank}}(A)$$*
-
-ב. *$$\dim(\mathop{\mathrm{N}}(A))+\mathop{\mathrm{rank}}(A)=n$$*
-:::
-
-::: remark
-הסעיף השני של המשפט נקרא \"משפט הדרגה\". שימו לב ש- $\dim(\mathop{\mathrm{N}}(A))$ קטן ככל ש- $\mathop{\mathrm{rank}}(A)$ גדלה. כבר ראינו שמתקיים $\mathop{\mathrm{rank}}(A)=n$ אם ורק אם $\mathop{\mathrm{N}}(A)=\Set{\underline{0}}$, וזה שקול לתנאי על המימד $\dim(\mathop{\mathrm{N}}(A))=0$. במקרה זה הסכום הוא אכן $n$, והמשפט מכליל זאת למקרים אחרים. רעיון ההוכחה הוא פשוט: הדרגה שווה למספר המשתנים התלויים, ומימד מרחב הפתרונות שווה למספר המשתנים החופשיים (והסכום הכולל הוא $n$). צריך רק להצדיק את הקביעות האלו, ונדחה את ההוכחה המסודרת לפרק על העתקות לינאריות (שם תופיע הכללה של משפט הדרגה).
-:::
-
-\begin{teacher}
-\begin{proof}
-$A$
-שקולת שורה למטריצה מדורגת קנונית
-$A'$.
-מספיק להוכיח את המשפט עבור 
-$A'$,
-כי לפי הגדרת הדרגה 
-$\mathop{\mathrm{rank}}(A)=\mathop{\mathrm{rank}}(A')$
-ולפי טענה
-\ref{prop:row-space-invariance}
-מתקיים:
-$$
-\begin{aligned}
-\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Row}}(A') &\implies \dim(\mathop{\mathrm{Row}}(A))=\dim(\mathop{\mathrm{Row}}(A')) \\
-\mathop{\mathrm{N}}(A)=\mathop{\mathrm{N}}(A') &\implies \dim(\mathop{\mathrm{N}}(A))=\dim(\mathop{\mathrm{N}}(A'))
-\end{aligned}
-$$
-
-בנוסף, נראה כי
-$\dim(\mathop{\mathrm{Col}}(A))=\dim(\mathop{\mathrm{Col}}(A'))$.
-אכן, אם 
-$v_1,...,v_n\in \mathbb{F}^m$
-הן עמודות 
-$A$,
-אז קיימת תת-קבוצה שהיא בסיס ל-
-$\mathop{\mathrm{Col}}(A)$.
-ניתן להניח (בלי הגבלת הכלליות, כי הסדר לא משפיע על המימד) שזו תת-קבוצה מהצורה 
-$\Set{v_1,...,v_k}$
-כאשר 
-$k\leq n$.
-אז לפי מסקנה
-\ref{cor:left},
-קיימת מטריצה הפיכה
-$B\in\mathbb{M}_{m\times m}(\mathbb{F})$
-כך ש-
-$A'=BA$.
-לפי תרגיל
-\ref{exer:column-dim},
-נובע כי
-$\Set{Bv_1,...,Bv_k}$
-היא בת"ל. היא גם פורשת את
-$\mathop{\mathrm{Col}}(A')=\mathop{\mathrm{Span}}(Bv_1,...,Bv_n)$,
-כי אחרת קיים 
-$j>k$
-כך ש-
-$\Set{Bv_1,...,Bv_k,Bv_j}$
-בת"ל ואז נובע לפי תרגיל
-\ref{exer:column-dim}
-כי
-$\Set{v_1,...,v_k,v_j}$
-בת"ל וזו סתירה להנחה ש-
-$\Set{v_1,...,v_k}$
-היא בסיס ל-
-$\mathop{\mathrm{Col}}(A)$.
-לכן,
-$\Set{Bv_1,...,Bv_k}$
-היא בסיס ל-
-$\mathop{\mathrm{Col}}(A')$
-ומתקיים
-$\dim(\mathop{\mathrm{Col}}(A))=k=\dim(\mathop{\mathrm{Col}}(A'))$.
-
-אז אנחנו מוכנים להתמקד בהוכחת המשפט עבור 
-$A'$,
-שהיא מהצורה
-$$
-A'=\begin{pmatrix}
-1 & 0 & \cdots & 0 & b_{1,r+1} & \cdots & b_{1,n} \\
-0 & 1 & \cdots & 0 & b_{2,r+1} & \cdots & b_{2,n} \\
-\vdots & \vdots & \cdots & \vdots & \vdots & \cdots & \vdots \\
-0 & 0 & \cdots & 1 & b_{r,r+1} & \cdots & b_{r,n} \\
-0 & 0 & \cdots & 0 & 0 & \cdots & 0 \\
-\vdots & \vdots & \cdots & \vdots & \vdots & \cdots & \vdots \\
-0 & 0 & \cdots & 0 & 0 & \cdots & 0
-\end{pmatrix}
-$$
-כאשר 
-$r=\mathop{\mathrm{rank}}(A)$.
-למעשה, נראה כי
-$k=r$.
-
-\begin{enumerate}[label=\alph*.]
-\item 
-נסמן ב-
-$w_1,...w_r$
-את השורות של 
-$A'$
-שאינן שורות אפסים.
-ברור ש-
-$\Set{w_1,...,w_r}$
-פורשת את
-$\mathop{\mathrm{Row}}(A)$.
-נראה כי זו גם קבוצה בת"ל. כבר הנחנו בלי הגבלת הכלליות שהאיברים המובילים מופיעים ב-
-$r$
-העמודות הראשונות (אם יש קפיצות, הן משפיעות רק על האינדקסים ולא על המימדים).
-כעת נניח שקיימים 
-$\alpha_1,...,\alpha_r\in\mathbb{F}$
-כך ש-
-$$
-\begin{aligned}
-\alpha_1w_1+...+\alpha_rw_r=0 &\implies (\alpha_1,...,\alpha_r,*,...,*)=(0,...,0) \\
-& \implies \alpha_1=...=\alpha_r=0
-\end{aligned}
-$$
-אז 
-$\Set{w_1,...,w_r}$
-היא בסיס ל-
-$\mathop{\mathrm{Row}}(A)$,
-ולכן
-$\dim(\mathop{\mathrm{Row}}(A))=r=\mathop{\mathrm{rank}}(A)$.
-
-לגבי העמודות, ברור כי
-$Bv_i=e_i$
-לכל
-$1\leq i\leq r$.
-ברור גם ש-
-$\Set{e_1,...,e_r}$
-פורשת את שאר העמודות ולכן את
-$\mathop{\mathrm{Col}}(A')$.
-ידוע שזו קבוצה בת"ל, ולכן מדובר בבסיס. אז קיבלנו
-$\dim(\mathop{\mathrm{Col}}(A'))=r$,
-ולכן
-$\dim(\mathop{\mathrm{Col}}(A))=\mathop{\mathrm{rank}}(A)$.
-
-\item 
-הממ"ל המתאימה ל-
-$A'$
-(אחרי העברת אגפים ומחיקת משוואות מהצורה 
-$0=0$)
-היא
-
-$$
-\begin{cases}
-\begin{array}{r c l}
-x_1 & = & -b_{1,r+1}x_{r+1}-\cdots-b_{1,n}x_n \\
-x_2 & = & -b_{2,r+1}x_{r+1}-\cdots-b_{2,n}x_n \\
-\vdots & \vdots & \vdots \\
-x_r & = & -b_{r,r+1}x_{r+1}-\cdots-b_{r,n}x_n
-\end{array}
-\end{cases}
-$$
-
-המשתנים החופשיים הם 
-$x_{r+1},...,x_n$.
-נציב
-$x_i=t_i$
-לכל 
-$r+1\leq i\leq n$
-ונקבל
-
-$$
-\begin{aligned} 
-\mathop{\mathrm{N}}(A)&=\Set{ \begin{pmatrix}
--b_{1,r+1}t_{r+1}-\cdots-b_{1,n}t_n \\
-\vdots \\
--b_{r,r+1}t_{r+1}-\cdots-b_{r,n}t_n \\ 
-t_{r+1} \\ 
-\vdots \\ 
-t_n 
-\end{pmatrix}|t_{r+1},...,t_n\in\mathbb{F}} \\ 
-&=\Set{t_{r+1}\begin{pmatrix} -b_{1,r+1} \\ 
-\vdots \\ 
--b_{r,r+1} \\ 
-1 \\ 
-0 \\ 
-\vdots \\ 
-0 
-\end{pmatrix}+...+t_n\begin{pmatrix} 
--b_{1,n} \\ 
-\vdots \\ 
--b_{r,n} \\ 
-0 \\ 
-\vdots \\ 
-0 \\ 
-1 
-\end{pmatrix}|t_{r+1},...,t_n\in\mathbb{F}} \\ 
-&=\mathop{\mathrm{Span}}\left(\begin{pmatrix} -b_{1,r+1} \\ \vdots \\ -b_{r,r+1} \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix},...,\begin{pmatrix} -b_{1,n} \\ \vdots \\ -b_{r,n} \\ 0 \\ \vdots \\ 0 \\ 1 \end{pmatrix}\right)
-\end{aligned}
-$$
-
-$\Set{\begin{pmatrix}-b_{1,r+1}\\\vdots\\-b_{r,r+1}\\1\\0\\\vdots\\0\end{pmatrix},...,\begin{pmatrix}-b_{1,n}\\\vdots\\-b_{r,n}\\0\\\vdots\\0\\1\end{pmatrix}}$
-היא גם בת"ל ולכן היא בסיס 
-ל-
-$\mathop{\mathrm{N}}(A)$.
-אכן, אם נניח שקיימים
-$\alpha_{r+1},...,\alpha_n\in\mathbb{F}$
-כך ש-
-$$
-\alpha_{r+1}\begin{pmatrix}
--b_{1,r+1} \\
-\vdots \\
--b_{r,r+1} \\
-1 \\
-0 \\
-\vdots \\
-0
-\end{pmatrix}+...+\alpha_n\begin{pmatrix}
--b_{1,n} \\
-\vdots \\
--b_{r,n} \\
-0 \\
-\vdots \\
-0 \\
-1
-\end{pmatrix}=\begin{pmatrix}
-0 \\
-\vdots \\
-0  \\
-0 \\
-0 \\
-\vdots \\
-0
-\end{pmatrix}
-$$
-נסתכל רק על
-$n-r$
-הקוארדינטות האחרונות ונקבל
-$\alpha_{r+1}=...=\alpha_n=0$.
-אז קיבלנו בסיס עם
-$n-r$
-וקטורים (כמספר המשתנים החופשיים), ולכן 
-$\dim(\mathop{\mathrm{N}}(A'))=n-r$.
-באופן שקול, נזכיר כי
-$\mathop{\mathrm{N}}(A)=\mathop{\mathrm{N}}(A')$
-ולכן מתקיים
-$$
-.\dim(\mathop{\mathrm{N}}(A))+\mathop{\mathrm{rank}}(A)=n
-$$
-
-\end{enumerate}
-\end{proof}
-\end{teacher}
-
-::: exercise
-תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$. הוכיחו כי:
-
-א. $\mathop{\mathrm{rank}}(A^t)=\mathop{\mathrm{rank}}(A)$
-
-ב. $\dim(\mathop{\mathrm{N}}(A))\geq n-m$
-:::
-
-::: {.callout-note collapse="true" title="פתרון"}
-
-א. לפי סעיף א' של משפט -@thm-rank-nullity, מתקיים $$.\mathop{\mathrm{rank}}(A^t)=\dim(\mathop{\mathrm{Col}}(A^t))=\dim(\mathop{\mathrm{Row}}(A))=\mathop{\mathrm{rank}}(A)$$
-
-ב. לפי משפט הדרגה ואי-השוויון $\mathop{\mathrm{rank}}(A)\leq m$, מתקיים
-
-$$.\dim(\mathop{\mathrm{N}}(A))=n-\mathop{\mathrm{rank}}(A)\geq n-m$$
-:::
-
-::: exercise
-נסתכל על תת-המרחב $W\subseteq\mathbb{R}^4$ שמוגדר ע\"י $$.W=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
-1 \\
-2 \\
-3 \\
-4
-\end{pmatrix},\begin{pmatrix}
-1 \\
-0 \\
--1 \\
-0
-\end{pmatrix}\right)$$
-
-א. נניח שקיימת מטריצה $A$ כך ש- $\mathop{\mathrm{N}}(A)=W$. מהו מספר העמודות שלה? כמה שורות יש לה לכל הפחות? כמה שורות יש לה לכל היותר?
-
-ב. מצאו מטריצה $A$ כנ\"ל.
-:::
-
-::: {.callout-note collapse="true" title="פתרון"}
-
-א. מספר העמודות של $A$ הוא בהכרח $4$, כי מספר העמודות שווה למספר המשתנים של הממ\"ל $Ax=\underline{0}$ ונתון שקבוצת הפתרונות היא תת-מרחב של $\mathbb{R}^4$. הקבוצה $\Set{\begin{pmatrix}1\\2\\3\\4\end{pmatrix},\begin{pmatrix}1\\0\\-1\\0\end{pmatrix}}$ היא בת\"ל כי שני הוקטורים אינם קו-לינאריים. לכן, קבוצה זו היא בסיס ל- $W$ ומתקיים $\dim(\mathop{\mathrm{N}}(A))=\dim(W)=2$. לפי משפט הדרגה נובע כי $$.\dim(\mathop{\mathrm{N}}(A))+\mathop{\mathrm{rank}}(A)=4 \implies \mathop{\mathrm{rank}}(A)=2$$ אז מספר השורות המינימלי הוא $2$, אבל אין שום חסם עליון כי אפשר לחזור על אחת משתי השורות (או שתיהן) מספר שרירותי של פעמים. אפשר גם לקחת צירופים לינאריים שונים של שתי השורות ולקבל מספר שרירותי של שורות שונות, ועדיין הדרגה תישאר $2$.
-
-ב. יש שתי דרכי פתרון.
-
-[דרך א']{.underline}: נשים לב כי $$\begin{pmatrix}
-    x \\
-    y \\
-    z \\
-    w 
-    \end{pmatrix}\in W \iff \left(\begin{array}{cc|c}
-    1 & 1 & x \\
-    2 & 0 & y \\
-    3 & -1  & z \\
-    4 & 0 & w 
-    \end{array}\right) \quad \text{קיים פתרון לממ"ל}$$ או במילים: הוקטור שייך ל- $W$ אם ורק אם קיים פתרון לממ\"ל שמתארת את תנאי הפרישה. נדרג את מטריצת המקדמים המורחבת ונמצא תנאים על $x,y,z,w$ לכך שלא תופיע אף שורת סתירה בסוף הדירוג. תנאים אלה יהוו ממ\"ל חדשה, שתוביל למטריצה $A$.
-
-$$\begin{aligned}
-    &\left(
-    \begin{array}{cc|c}
-    1 & 1 & x \\
-    2 & 0 & y \\
-    3 & -1 & z \\
-    4 & 0 & w
-    \end{array}
-    \right)
-    \xrightarrow{
-    \substack{
-    R_2-2R_1\to R_2\\
-    R_3-3R_1\to R_3\\
-    R_4-4R_1\to R_4
-    }
-    }
-    \left(
-    \begin{array}{cc|c}
-    1 & 1 & x \\
-    0 & -2 & y-2x \\
-    0 & -4 & z-3x \\
-    0 & -4 & w-4x
-    \end{array}
-    \right)\\
-    \xrightarrow{
-    -\frac12 R_2\to R_2
-    }
-    &\left(
-    \begin{array}{cc|c}
-    1 & 1 & x \\
-    0 & 1 & \frac{2x-y}{2} \\
-    0 & -4 & z-3x \\
-    0 & -4 & w-4x
-    \end{array}
-    \right)\xrightarrow{
-    \substack{
-    R_3+4R_2\to R_3\\
-    R_4+4R_2\to R_4
-    }
-    }
-    \left(
-    \begin{array}{cc|c}
-    1 & 1 & x \\
-    0 & 1 & \frac{2x-y}{2} \\
-    0 & 0 & x-2y+z \\
-    0 & 0 & w-2y
-    \end{array}
-    \right)
-    \end{aligned}$$
-
-לכן:
-
-$$\begin{pmatrix}
-    x \\
-    y \\
-    z \\
-    w 
-    \end{pmatrix}\in W \iff 
-    \begin{cases} 
-    \begin{aligned}
-    x-2y+z&=0 \\
-    -2y+w&=0
-    \end{aligned}
-    \end{cases}$$
-
-אין תשובה יחידה ל- $A$, כי ניתן לבצע פש\"אות על הממ\"ל. אבל בלי להסתבך עם כל האפשרויות, ניקח את הממ\"ל שקיבלנו ונכתוב את מטריצת המקדמים המצומצמת:
-
-$$A=\begin{pmatrix}
-    1 & -2 & 1 & 0 \\
-    0 & -2 & 0 & 1
-    \end{pmatrix}$$
-
-לפי הדירוג הקודם, אכן מתקיים $\mathop{\mathrm{N}}(A)=W$. זו התשובה הנוחה ביותר, אבל הנה שתי דוגמאות לבחירה של $A$ עם שורות עודפות:
-
-$$\begin{pmatrix}
-    1 & -2 & 1 & 0 \\
-    0 & -2 & 0 & 1 \\
-    0 & 0 & 0 & 0
-    \end{pmatrix}, \quad \begin{pmatrix}
-    1 & -2 & 1 & 0 \\
-    0 & -2 & 0 & 1 \\
-    1 & -2 & 1 & 0 \\
-    0 & -2 & 0 & 1
-    \end{pmatrix}$$
-
-[דרך ב']{.underline}: נחזור אל $\Set{\begin{pmatrix}1\\2\\3\\4\end{pmatrix},\begin{pmatrix}1\\0\\-1\\0\end{pmatrix}}$ והפעם נסתכל על המטריצה שאלה הן שורותיה:
-
-$$\begin{pmatrix}
-    1 & 2 & 3 & 4 \\
-    1 & 0 &-1 & 0
-    \end{pmatrix}$$
-
-לאחר דירוג נקבל את הצורה המדורגת קנונית הבאה:
-
-$$\begin{pmatrix}
-    1 & 0 & -1 & 0 \\
-    0 & 1 & 2 & 2
-    \end{pmatrix}$$
-
-הדירוג לא השפיע על מרחב השורות, ולכן אם נחזור לכתיבה של עמודות נקבל אפיון של $W$ לפי ממ\"ל:
-
-$$\begin{aligned}
-    W&=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
-    1 \\
-    2 \\
-    3 \\
-    4
-    \end{pmatrix},\begin{pmatrix}
-    1 \\
-    0 \\
-    -1 \\
-    0
-    \end{pmatrix}\right)=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
-    1 \\
-    0 \\
-    -1 \\
-    0
-    \end{pmatrix},\begin{pmatrix}
-    0 \\
-    1 \\
-    2 \\
-    2
-    \end{pmatrix}\right) \\
-    &=\left\{\begin{pmatrix}
-    s \\
-    t \\
-    -s+2t \\
-    2t
-    \end{pmatrix}\middle|s,t\in\mathbb{R}\right\}=\left\{\begin{pmatrix}
-    x \\
-    y \\
-    z \\
-    w
-    \end{pmatrix}\in\mathbb{R}^4\middle|\begin{aligned}z&=-x+2y\\w&=2y\end{aligned}\right\}
-    \end{aligned}$$
-
-לכן, לאחר העברת אגפים שוב נובע כי $W=N(A)$ עבור
-
-$$.A=\begin{pmatrix}
-    1 & -2 & 1 & 0 \\
-    0 & -2 & 0 & 1
-    \end{pmatrix}$$
-:::
-
 ## תת-מרחבים
 
 נרצה לעסוק בתת-קבוצות של מרחבים וקטוריים, שגם הן יהיו מרחבים וקטוריים בפני עצמן.
@@ -2034,6 +1494,550 @@ t
 0\\
 1
 \end{pmatrix}}$$
+:::
+
+### משפט הדרגה
+
+הדוגמה הבאה היא הכנה לקראת משפט שיתאר את הקשר בין המימדים של תת-מרחבים הקשורים למטריצה: מרחב השורות, מרחב העמודות ומרחב הפתרונות.
+
+::: example
+תהי $$.A=\begin{pmatrix}
+1 & 2 & 0 & 3 \\
+2 & 1 & -1 & 0 \\
+5 & 4 & -2 & 3 \\
+0 & -3 & -1 & -6
+\end{pmatrix}$$
+
+נחשב את המימדים של $\mathop{\mathrm{N}}(A),\mathop{\mathrm{Col}}(A),\mathop{\mathrm{Row}}(A)$ ע\"י מציאת בסיסים. נדרג את $A$ ונקבל
+
+$$\begin{aligned}
+&\begin{pmatrix}
+1 & 2 & 0 & 3 \\
+2 & 1 & -1 & 0 \\
+5 & 4 & -2 & 3 \\
+0 & -3 & -1 & -6
+\end{pmatrix}
+\xrightarrow{
+\substack{
+R_2 - 2R_1 \to R_2\\
+R_3 - 5R_1 \to R_3
+}
+}
+\begin{pmatrix}
+1 & 2 & 0 & 3 \\
+0 & -3 & -1 & -6 \\
+0 & -6 & -2 & -12 \\
+0 & -3 & -1 & -6
+\end{pmatrix} \\
+\xrightarrow{
+\substack{
+R_3 - 2R_2 \to R_3 \\
+R_4 - R_2 \to R_4
+}
+}
+&\begin{pmatrix}
+1 & 2 & 0 & 3 \\
+0 & -3 & -1 & -6 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}\xrightarrow{-\frac{1}{3}R_2\to R_2}
+\begin{pmatrix}
+1 & 2 & 0 & 3 \\
+0 & 1 & \frac{1}{3} & 2 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \\
+\xrightarrow{R_1-2R_2\to R_1}
+&\begin{pmatrix}
+1 & 0 & -\frac{2}{3} & -1 \\
+0 & 1 & \frac{1}{3} & 2 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+\end{aligned}$$
+
+יש שני איברים מובילים בשתי העמודות הראשונות, ולכן במטריצה המקורית שתי העמודות האחרונות הן צ\"ל של שתי העמודות הראשונות. בנוסף, שתי העמודות הראשונות הן בת\"ל. אז הקבוצה $$\Set{\begin{pmatrix}
+1 \\
+2 \\
+5\\
+0
+\end{pmatrix},\begin{pmatrix}
+2 \\
+1 \\
+4\\
+-3
+\end{pmatrix}}$$ היא בסיס ל- $\mathop{\mathrm{Col}}(A)$, ולכן $\dim(\mathop{\mathrm{Col}}(A))=2$.
+
+לגבי מרחב השורות: הדירוג לא משנה אותו, ולכן ניתן להשתמש בשורות המטריצה המדורגת קנונית (בלי שורות האפסים). אז $\Set{(1,0,-\frac{2}{3},-1),(0,1,\frac{1}{3},2)}$ היא בסיס ל- $\mathop{\mathrm{Row}}(A)$, ולכן $\dim(\mathop{\mathrm{Row}}(A))=2$. נשים לב כי עד עכשיו שני המימדים שווים לדרגת המטריצה, וזה נכון באופן כללי לפי משפט שנוכיח בקרוב.
+
+במקרה זה מתקיים גם $\dim(\mathop{\mathrm{N}}(A))=2$, אבל הסיבה שונה. באופן אינטואיטיבי, המימד של מרחב הפתרונות אמור להיות מספר המשתנים החופשיים, שהוא ההפרש בין מספר המשתנים הכולל ובין הדרגה (מספר המשתנים התלויים). עוד לא הוכחנו את זה, אז נמצא בסיס ל- $\mathop{\mathrm{N}}(A)$. נפתור את הממ\"ל השקולה:
+
+$$\begin{cases}
+x_1-\frac{2}{3}x_3-x_4=0 \\
+x_2+\frac{1}{3}x_3+2x_4=0
+\end{cases}$$
+
+נציב $x_3=s,x_4=t$ ונקבל
+
+$$\begin{aligned}
+\mathop{\mathrm{N}}(A)&=\Set{\left(\frac{2}{3}s+t,-\frac{1}{3}s-2t,s,t\right)|s,t\in\mathbb{R}} \\
+&=\Set{s(\frac{2}{3},-\frac{1}{3},1,0)+t(1,-2,0,1)|s,t\in\mathbb{R}} \\
+&=\mathop{\mathrm{Span}}\left((\frac{2}{3},-\frac{1}{3},1,0),(1,-2,0,1)\right)
+\end{aligned}$$
+
+אז $\Set{(\frac{2}{3},-\frac{1}{3},1,0),(1,-2,0,1)}$ פורשת את $\mathop{\mathrm{N}}(A)$. קל לבדוק שהיא בת\"ל: נניח שקיימים $\alpha_1,\alpha_2\in\mathbb{R}$ כך ש- $$,\alpha_1(\frac{2}{3},-\frac{1}{3},1,0)+\alpha_2(1,-2,0,1)=(0,0,0,0)$$ אז לפי שתי הקוארדינטות האחרונות נקבל $\alpha_1=\alpha_2=0$. לכן, קבוצה זו היא בסיס ומתקיים $\dim(\mathop{\mathrm{N}}(A))=2$.
+:::
+
+:::: {.exercise #exr-column-dim}
+`\label{exer:column-dim}`{=latex} יהיו $\Set{v_1,...,v_k}\subseteq\mathbb{F}^n$ ו- $A\in\mathbb{M}_{n\times n}(\mathbb{F})$ הפיכה. הוכיחו כי $\Set{Av_1,...,Av_k}$ בת\"ל אם ורק אם $\Set{v_1,...,v_k}$ בת\"ל.
+:::
+
+::: {.callout-note collapse="true" title="פתרון"}
+בכיוון הראשון, נניח כי $\Set{v_1,...,v_k}$ בת\"ל ובנוסף קיימים $\alpha_1,..,\alpha_k\in\mathbb{F}$ כך ש- $$.\alpha_1Av_1+...+\alpha_kAv_k=0 \iff A(\alpha_1v_1+...+\alpha_kv_k)=\underline{0}$$ מהפיכות $A$ נובע כי $\alpha_1v_1+...+\alpha_kv_k=\underline{0}$, ומהנתון על $\Set{v_1,...,v_k}$ נובע כי בהכרח $\alpha_1=...=\alpha_k=0$. אז $\Set{Av_1,...,Av_k}$ בת\"ל.
+
+בכיוון השני (שלא דורש הפיכות), נניח כי $\Set{Av_1,...,Av_k}$ בת\"ל ובנוסף קיימים $\alpha_1,..,\alpha_k\in\mathbb{F}$ כך ש- $$.\alpha_1v_1+...+\alpha_kv_k=\underline{0}$$ נכפיל את שני האגפים ב- $A$ ונקבל $$.A(\alpha_1v_1+...+\alpha_kv_k)=A\underline{0} \iff \alpha_1Av_1+...+\alpha_kAv_k=\underline{0}$$ לכן, בהכרח מתקיים $\alpha_1=...=\alpha_k=0$ לפי ההנחה. אז $\Set{v_1,...,v_k}$ בת\"ל.
+:::
+
+:::: {.theorem #thm-rank-nullity}
+*`\label{thm:rank-nullity}`{=latex} תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$. אז מתקיים:*
+
+א. *$$\dim(\mathop{\mathrm{Row}}(A))=\dim(\mathop{\mathrm{Col}}(A))=\mathop{\mathrm{rank}}(A)$$*
+
+ב. *$$\dim(\mathop{\mathrm{N}}(A))+\mathop{\mathrm{rank}}(A)=n$$*
+:::
+
+::: remark
+הסעיף השני של המשפט נקרא \"משפט הדרגה\". שימו לב ש- $\dim(\mathop{\mathrm{N}}(A))$ קטן ככל ש- $\mathop{\mathrm{rank}}(A)$ גדלה. כבר ראינו שמתקיים $\mathop{\mathrm{rank}}(A)=n$ אם ורק אם $\mathop{\mathrm{N}}(A)=\Set{\underline{0}}$, וזה שקול לתנאי על המימד $\dim(\mathop{\mathrm{N}}(A))=0$. במקרה זה הסכום הוא אכן $n$, והמשפט מכליל זאת למקרים אחרים. רעיון ההוכחה הוא פשוט: הדרגה שווה למספר המשתנים התלויים, ומימד מרחב הפתרונות שווה למספר המשתנים החופשיים (והסכום הכולל הוא $n$). צריך רק להצדיק את הקביעות האלו, ונדחה את ההוכחה המסודרת לפרק על העתקות לינאריות (שם תופיע הכללה של משפט הדרגה).
+:::
+
+\begin{teacher}
+\begin{proof}
+$A$
+שקולת שורה למטריצה מדורגת קנונית
+$A'$.
+מספיק להוכיח את המשפט עבור 
+$A'$,
+כי לפי הגדרת הדרגה 
+$\mathop{\mathrm{rank}}(A)=\mathop{\mathrm{rank}}(A')$
+ולפי טענה
+\ref{prop:row-space-invariance}
+מתקיים:
+$$
+\begin{aligned}
+\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Row}}(A') &\implies \dim(\mathop{\mathrm{Row}}(A))=\dim(\mathop{\mathrm{Row}}(A')) \\
+\mathop{\mathrm{N}}(A)=\mathop{\mathrm{N}}(A') &\implies \dim(\mathop{\mathrm{N}}(A))=\dim(\mathop{\mathrm{N}}(A'))
+\end{aligned}
+$$
+
+בנוסף, נראה כי
+$\dim(\mathop{\mathrm{Col}}(A))=\dim(\mathop{\mathrm{Col}}(A'))$.
+אכן, אם 
+$v_1,...,v_n\in \mathbb{F}^m$
+הן עמודות 
+$A$,
+אז קיימת תת-קבוצה שהיא בסיס ל-
+$\mathop{\mathrm{Col}}(A)$.
+ניתן להניח (בלי הגבלת הכלליות, כי הסדר לא משפיע על המימד) שזו תת-קבוצה מהצורה 
+$\Set{v_1,...,v_k}$
+כאשר 
+$k\leq n$.
+אז לפי מסקנה
+\ref{cor:left},
+קיימת מטריצה הפיכה
+$B\in\mathbb{M}_{m\times m}(\mathbb{F})$
+כך ש-
+$A'=BA$.
+לפי תרגיל
+\ref{exer:column-dim},
+נובע כי
+$\Set{Bv_1,...,Bv_k}$
+היא בת"ל. היא גם פורשת את
+$\mathop{\mathrm{Col}}(A')=\mathop{\mathrm{Span}}(Bv_1,...,Bv_n)$,
+כי אחרת קיים 
+$j>k$
+כך ש-
+$\Set{Bv_1,...,Bv_k,Bv_j}$
+בת"ל ואז נובע לפי תרגיל
+\ref{exer:column-dim}
+כי
+$\Set{v_1,...,v_k,v_j}$
+בת"ל וזו סתירה להנחה ש-
+$\Set{v_1,...,v_k}$
+היא בסיס ל-
+$\mathop{\mathrm{Col}}(A)$.
+לכן,
+$\Set{Bv_1,...,Bv_k}$
+היא בסיס ל-
+$\mathop{\mathrm{Col}}(A')$
+ומתקיים
+$\dim(\mathop{\mathrm{Col}}(A))=k=\dim(\mathop{\mathrm{Col}}(A'))$.
+
+אז אנחנו מוכנים להתמקד בהוכחת המשפט עבור 
+$A'$,
+שהיא מהצורה
+$$
+A'=\begin{pmatrix}
+1 & 0 & \cdots & 0 & b_{1,r+1} & \cdots & b_{1,n} \\
+0 & 1 & \cdots & 0 & b_{2,r+1} & \cdots & b_{2,n} \\
+\vdots & \vdots & \cdots & \vdots & \vdots & \cdots & \vdots \\
+0 & 0 & \cdots & 1 & b_{r,r+1} & \cdots & b_{r,n} \\
+0 & 0 & \cdots & 0 & 0 & \cdots & 0 \\
+\vdots & \vdots & \cdots & \vdots & \vdots & \cdots & \vdots \\
+0 & 0 & \cdots & 0 & 0 & \cdots & 0
+\end{pmatrix}
+$$
+כאשר 
+$r=\mathop{\mathrm{rank}}(A)$.
+למעשה, נראה כי
+$k=r$.
+
+\begin{enumerate}[label=\alph*.]
+\item 
+נסמן ב-
+$w_1,...w_r$
+את השורות של 
+$A'$
+שאינן שורות אפסים.
+ברור ש-
+$\Set{w_1,...,w_r}$
+פורשת את
+$\mathop{\mathrm{Row}}(A)$.
+נראה כי זו גם קבוצה בת"ל. כבר הנחנו בלי הגבלת הכלליות שהאיברים המובילים מופיעים ב-
+$r$
+העמודות הראשונות (אם יש קפיצות, הן משפיעות רק על האינדקסים ולא על המימדים).
+כעת נניח שקיימים 
+$\alpha_1,...,\alpha_r\in\mathbb{F}$
+כך ש-
+$$
+\begin{aligned}
+\alpha_1w_1+...+\alpha_rw_r=0 &\implies (\alpha_1,...,\alpha_r,*,...,*)=(0,...,0) \\
+& \implies \alpha_1=...=\alpha_r=0
+\end{aligned}
+$$
+אז 
+$\Set{w_1,...,w_r}$
+היא בסיס ל-
+$\mathop{\mathrm{Row}}(A)$,
+ולכן
+$\dim(\mathop{\mathrm{Row}}(A))=r=\mathop{\mathrm{rank}}(A)$.
+
+לגבי העמודות, ברור כי
+$Bv_i=e_i$
+לכל
+$1\leq i\leq r$.
+ברור גם ש-
+$\Set{e_1,...,e_r}$
+פורשת את שאר העמודות ולכן את
+$\mathop{\mathrm{Col}}(A')$.
+ידוע שזו קבוצה בת"ל, ולכן מדובר בבסיס. אז קיבלנו
+$\dim(\mathop{\mathrm{Col}}(A'))=r$,
+ולכן
+$\dim(\mathop{\mathrm{Col}}(A))=\mathop{\mathrm{rank}}(A)$.
+
+\item 
+הממ"ל המתאימה ל-
+$A'$
+(אחרי העברת אגפים ומחיקת משוואות מהצורה 
+$0=0$)
+היא
+
+$$
+\begin{cases}
+\begin{array}{r c l}
+x_1 & = & -b_{1,r+1}x_{r+1}-\cdots-b_{1,n}x_n \\
+x_2 & = & -b_{2,r+1}x_{r+1}-\cdots-b_{2,n}x_n \\
+\vdots & \vdots & \vdots \\
+x_r & = & -b_{r,r+1}x_{r+1}-\cdots-b_{r,n}x_n
+\end{array}
+\end{cases}
+$$
+
+המשתנים החופשיים הם 
+$x_{r+1},...,x_n$.
+נציב
+$x_i=t_i$
+לכל 
+$r+1\leq i\leq n$
+ונקבל
+
+$$
+\begin{aligned} 
+\mathop{\mathrm{N}}(A)&=\Set{ \begin{pmatrix}
+-b_{1,r+1}t_{r+1}-\cdots-b_{1,n}t_n \\
+\vdots \\
+-b_{r,r+1}t_{r+1}-\cdots-b_{r,n}t_n \\ 
+t_{r+1} \\ 
+\vdots \\ 
+t_n 
+\end{pmatrix}|t_{r+1},...,t_n\in\mathbb{F}} \\ 
+&=\Set{t_{r+1}\begin{pmatrix} -b_{1,r+1} \\ 
+\vdots \\ 
+-b_{r,r+1} \\ 
+1 \\ 
+0 \\ 
+\vdots \\ 
+0 
+\end{pmatrix}+...+t_n\begin{pmatrix} 
+-b_{1,n} \\ 
+\vdots \\ 
+-b_{r,n} \\ 
+0 \\ 
+\vdots \\ 
+0 \\ 
+1 
+\end{pmatrix}|t_{r+1},...,t_n\in\mathbb{F}} \\ 
+&=\mathop{\mathrm{Span}}\left(\begin{pmatrix} -b_{1,r+1} \\ \vdots \\ -b_{r,r+1} \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix},...,\begin{pmatrix} -b_{1,n} \\ \vdots \\ -b_{r,n} \\ 0 \\ \vdots \\ 0 \\ 1 \end{pmatrix}\right)
+\end{aligned}
+$$
+
+$\Set{\begin{pmatrix}-b_{1,r+1}\\\vdots\\-b_{r,r+1}\\1\\0\\\vdots\\0\end{pmatrix},...,\begin{pmatrix}-b_{1,n}\\\vdots\\-b_{r,n}\\0\\\vdots\\0\\1\end{pmatrix}}$
+היא גם בת"ל ולכן היא בסיס 
+ל-
+$\mathop{\mathrm{N}}(A)$.
+אכן, אם נניח שקיימים
+$\alpha_{r+1},...,\alpha_n\in\mathbb{F}$
+כך ש-
+$$
+\alpha_{r+1}\begin{pmatrix}
+-b_{1,r+1} \\
+\vdots \\
+-b_{r,r+1} \\
+1 \\
+0 \\
+\vdots \\
+0
+\end{pmatrix}+...+\alpha_n\begin{pmatrix}
+-b_{1,n} \\
+\vdots \\
+-b_{r,n} \\
+0 \\
+\vdots \\
+0 \\
+1
+\end{pmatrix}=\begin{pmatrix}
+0 \\
+\vdots \\
+0  \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{pmatrix}
+$$
+נסתכל רק על
+$n-r$
+הקוארדינטות האחרונות ונקבל
+$\alpha_{r+1}=...=\alpha_n=0$.
+אז קיבלנו בסיס עם
+$n-r$
+וקטורים (כמספר המשתנים החופשיים), ולכן 
+$\dim(\mathop{\mathrm{N}}(A'))=n-r$.
+באופן שקול, נזכיר כי
+$\mathop{\mathrm{N}}(A)=\mathop{\mathrm{N}}(A')$
+ולכן מתקיים
+$$
+.\dim(\mathop{\mathrm{N}}(A))+\mathop{\mathrm{rank}}(A)=n
+$$
+
+\end{enumerate}
+\end{proof}
+\end{teacher}
+
+::: exercise
+תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$. הוכיחו כי:
+
+א. $\mathop{\mathrm{rank}}(A^t)=\mathop{\mathrm{rank}}(A)$
+
+ב. $\dim(\mathop{\mathrm{N}}(A))\geq n-m$
+:::
+
+::: {.callout-note collapse="true" title="פתרון"}
+
+א. לפי סעיף א' של משפט -@thm-rank-nullity, מתקיים $$.\mathop{\mathrm{rank}}(A^t)=\dim(\mathop{\mathrm{Col}}(A^t))=\dim(\mathop{\mathrm{Row}}(A))=\mathop{\mathrm{rank}}(A)$$
+
+ב. לפי משפט הדרגה ואי-השוויון $\mathop{\mathrm{rank}}(A)\leq m$, מתקיים
+
+$$.\dim(\mathop{\mathrm{N}}(A))=n-\mathop{\mathrm{rank}}(A)\geq n-m$$
+:::
+
+::: exercise
+נסתכל על תת-המרחב $W\subseteq\mathbb{R}^4$ שמוגדר ע\"י $$.W=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
+1 \\
+2 \\
+3 \\
+4
+\end{pmatrix},\begin{pmatrix}
+1 \\
+0 \\
+-1 \\
+0
+\end{pmatrix}\right)$$
+
+א. נניח שקיימת מטריצה $A$ כך ש- $\mathop{\mathrm{N}}(A)=W$. מהו מספר העמודות שלה? כמה שורות יש לה לכל הפחות? כמה שורות יש לה לכל היותר?
+
+ב. מצאו מטריצה $A$ כנ\"ל.
+:::
+
+::: {.callout-note collapse="true" title="פתרון"}
+
+א. מספר העמודות של $A$ הוא בהכרח $4$, כי מספר העמודות שווה למספר המשתנים של הממ\"ל $Ax=\underline{0}$ ונתון שקבוצת הפתרונות היא תת-מרחב של $\mathbb{R}^4$. הקבוצה $\Set{\begin{pmatrix}1\\2\\3\\4\end{pmatrix},\begin{pmatrix}1\\0\\-1\\0\end{pmatrix}}$ היא בת\"ל כי שני הוקטורים אינם קו-לינאריים. לכן, קבוצה זו היא בסיס ל- $W$ ומתקיים $\dim(\mathop{\mathrm{N}}(A))=\dim(W)=2$. לפי משפט הדרגה נובע כי $$.\dim(\mathop{\mathrm{N}}(A))+\mathop{\mathrm{rank}}(A)=4 \implies \mathop{\mathrm{rank}}(A)=2$$ אז מספר השורות המינימלי הוא $2$, אבל אין שום חסם עליון כי אפשר לחזור על אחת משתי השורות (או שתיהן) מספר שרירותי של פעמים. אפשר גם לקחת צירופים לינאריים שונים של שתי השורות ולקבל מספר שרירותי של שורות שונות, ועדיין הדרגה תישאר $2$.
+
+ב. יש שתי דרכי פתרון.
+
+[דרך א']{.underline}: נשים לב כי $$\begin{pmatrix}
+    x \\
+    y \\
+    z \\
+    w 
+    \end{pmatrix}\in W \iff \left(\begin{array}{cc|c}
+    1 & 1 & x \\
+    2 & 0 & y \\
+    3 & -1  & z \\
+    4 & 0 & w 
+    \end{array}\right) \quad \text{קיים פתרון לממ"ל}$$ או במילים: הוקטור שייך ל- $W$ אם ורק אם קיים פתרון לממ\"ל שמתארת את תנאי הפרישה. נדרג את מטריצת המקדמים המורחבת ונמצא תנאים על $x,y,z,w$ לכך שלא תופיע אף שורת סתירה בסוף הדירוג. תנאים אלה יהוו ממ\"ל חדשה, שתוביל למטריצה $A$.
+
+$$\begin{aligned}
+    &\left(
+    \begin{array}{cc|c}
+    1 & 1 & x \\
+    2 & 0 & y \\
+    3 & -1 & z \\
+    4 & 0 & w
+    \end{array}
+    \right)
+    \xrightarrow{
+    \substack{
+    R_2-2R_1\to R_2\\
+    R_3-3R_1\to R_3\\
+    R_4-4R_1\to R_4
+    }
+    }
+    \left(
+    \begin{array}{cc|c}
+    1 & 1 & x \\
+    0 & -2 & y-2x \\
+    0 & -4 & z-3x \\
+    0 & -4 & w-4x
+    \end{array}
+    \right)\\
+    \xrightarrow{
+    -\frac12 R_2\to R_2
+    }
+    &\left(
+    \begin{array}{cc|c}
+    1 & 1 & x \\
+    0 & 1 & \frac{2x-y}{2} \\
+    0 & -4 & z-3x \\
+    0 & -4 & w-4x
+    \end{array}
+    \right)\xrightarrow{
+    \substack{
+    R_3+4R_2\to R_3\\
+    R_4+4R_2\to R_4
+    }
+    }
+    \left(
+    \begin{array}{cc|c}
+    1 & 1 & x \\
+    0 & 1 & \frac{2x-y}{2} \\
+    0 & 0 & x-2y+z \\
+    0 & 0 & w-2y
+    \end{array}
+    \right)
+    \end{aligned}$$
+
+לכן:
+
+$$\begin{pmatrix}
+    x \\
+    y \\
+    z \\
+    w 
+    \end{pmatrix}\in W \iff 
+    \begin{cases} 
+    \begin{aligned}
+    x-2y+z&=0 \\
+    -2y+w&=0
+    \end{aligned}
+    \end{cases}$$
+
+אין תשובה יחידה ל- $A$, כי ניתן לבצע פש\"אות על הממ\"ל. אבל בלי להסתבך עם כל האפשרויות, ניקח את הממ\"ל שקיבלנו ונכתוב את מטריצת המקדמים המצומצמת:
+
+$$A=\begin{pmatrix}
+    1 & -2 & 1 & 0 \\
+    0 & -2 & 0 & 1
+    \end{pmatrix}$$
+
+לפי הדירוג הקודם, אכן מתקיים $\mathop{\mathrm{N}}(A)=W$. זו התשובה הנוחה ביותר, אבל הנה שתי דוגמאות לבחירה של $A$ עם שורות עודפות:
+
+$$\begin{pmatrix}
+    1 & -2 & 1 & 0 \\
+    0 & -2 & 0 & 1 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix}, \quad \begin{pmatrix}
+    1 & -2 & 1 & 0 \\
+    0 & -2 & 0 & 1 \\
+    1 & -2 & 1 & 0 \\
+    0 & -2 & 0 & 1
+    \end{pmatrix}$$
+
+[דרך ב']{.underline}: נחזור אל $\Set{\begin{pmatrix}1\\2\\3\\4\end{pmatrix},\begin{pmatrix}1\\0\\-1\\0\end{pmatrix}}$ והפעם נסתכל על המטריצה שאלה הן שורותיה:
+
+$$\begin{pmatrix}
+    1 & 2 & 3 & 4 \\
+    1 & 0 &-1 & 0
+    \end{pmatrix}$$
+
+לאחר דירוג נקבל את הצורה המדורגת קנונית הבאה:
+
+$$\begin{pmatrix}
+    1 & 0 & -1 & 0 \\
+    0 & 1 & 2 & 2
+    \end{pmatrix}$$
+
+הדירוג לא השפיע על מרחב השורות, ולכן אם נחזור לכתיבה של עמודות נקבל אפיון של $W$ לפי ממ\"ל:
+
+$$\begin{aligned}
+    W&=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
+    1 \\
+    2 \\
+    3 \\
+    4
+    \end{pmatrix},\begin{pmatrix}
+    1 \\
+    0 \\
+    -1 \\
+    0
+    \end{pmatrix}\right)=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
+    1 \\
+    0 \\
+    -1 \\
+    0
+    \end{pmatrix},\begin{pmatrix}
+    0 \\
+    1 \\
+    2 \\
+    2
+    \end{pmatrix}\right) \\
+    &=\left\{\begin{pmatrix}
+    s \\
+    t \\
+    -s+2t \\
+    2t
+    \end{pmatrix}\middle|s,t\in\mathbb{R}\right\}=\left\{\begin{pmatrix}
+    x \\
+    y \\
+    z \\
+    w
+    \end{pmatrix}\in\mathbb{R}^4\middle|\begin{aligned}z&=-x+2y\\w&=2y\end{aligned}\right\}
+    \end{aligned}$$
+
+לכן, לאחר העברת אגפים שוב נובע כי $W=N(A)$ עבור
+
+$$.A=\begin{pmatrix}
+    1 & -2 & 1 & 0 \\
+    0 & -2 & 0 & 1
+    \end{pmatrix}$$
 :::
 
 ## קוארדינטות
