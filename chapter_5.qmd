@@ -324,10 +324,6 @@
 *`\label{cor:basis-extraction}`{=latex} אם $\Set{v_1,...,v_k}$ קבוצה הפורשת מ\"ו $V$ מעל $\mathbb{F}$, אז תת-הקבוצה $$\Set{v_i|1\leq i\leq k, v_i\notin\mathop{\mathrm{Span}}(v_1,...,v_{i-1})}$$ היא בת\"ל ופורשת את $V$.*
 :::
 
-::: remark
-המסקנה תקפה גם לגבי קבוצה הפורשת תת-מרחב $W$, שהוא מ\"ו בפני עצמו.
-:::
-
 ::: proof
 נסמן את הוקטורים שמופיעים בתת-הקבוצה לעיל ב- $v_{i_1},...,v_{i_l}$, כאשר $i_1<...<i_l$.
 
@@ -766,7 +762,7 @@ $$\begin{aligned}
 :::
 
 ::: proof
- לפי הנתון קיימות פש\"אות $S_1,...,S_k$ כך ש- $B=S_k(S_{k-1}(\cdots S_2(S_1(A))\cdots))$, או באופן שקול קיימות מטריצות אלמנטריות $E_1,...,E_k\in\mathbb{M}_{m\times m}$ כך ש- $B=E_k\cdots E_1A$. אז לפי טענה -@prp-row-space-invariance נובע כי $$.\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Row}}(E_1A)=....=\mathop{\mathrm{Row}}(E_k\cdots E_1A)=\mathop{\mathrm{Row}}(B)$$
+ לפי הנתון קיימות פש\"אות $S_1,...,S_k$ כך ש- $B=S_k(S_{k-1}(\cdots S_2(S_1(A))\cdots))$. לפי טענה -@prp-row-space-invariance, כל פש\"א אינה משנה את מרחב השורות, ולכן $$.\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Row}}(S_1(A))=\cdots=\mathop{\mathrm{Row}}(B)$$
 :::
 
 ::: remark
@@ -792,7 +788,7 @@ $$\begin{aligned}
 
 אז לפי הגדרת הכפל, לכל $1\leq i\leq n$ השורה ה- $i$ של $BA$ היא בדיוק הוקטור שנתון ע\"י הצירוף הלינארי הבא: $$\sum_{j=1}^n b_{ij}R_j\in\mathop{\mathrm{Span}}(R_1,...,R_n)=\mathop{\mathrm{Row}}(A)$$
 
-ב. כאשר $B$ הפיכה, $B$ היא מכפלת מטריצות אלמנטריות ובפרט $BA$ שקולת שורה ל- $A$. אז לפי מסקנה -@cor-row-equivalence נובע כי $\mathop{\mathrm{Row}}(BA)=\mathop{\mathrm{Row}}(A)$.
+ב. מסעיף א' מתקיים $\mathop{\mathrm{Row}}(BA)\subseteq \mathop{\mathrm{Row}}(A)$. מאחר ש- $B$ הפיכה, מתקיים $A=B^{-1}(BA)$. נפעיל שוב את סעיף א', הפעם על $B^{-1}$ ועל $BA$, ונקבל $\mathop{\mathrm{Row}}(A)\subseteq \mathop{\mathrm{Row}}(BA)$. לכן $\mathop{\mathrm{Row}}(BA)=\mathop{\mathrm{Row}}(A)$.
 :::
 
 ## מימדים
