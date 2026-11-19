@@ -479,7 +479,7 @@ $$\begin{pmatrix}
 
 ### אפיון של בסיס לפי מטריצה
 
-כעת נתמקד ב- $V=\mathbb{F}^n$ כדי להבין את הקשר בין המושג של בסיס לבין החומר של הפרקים הקודמים (הפיכות של מטריצה). נניח כי $v_1,...,v_k$ וקטורי עמודה ב- $\mathbb{F}^n$. ראינו בטענה -@prp-column-space שלכל $w\in\mathbb{F}^n$ מתקיים $w\in\mathop{\mathrm{Span}}(v_1,....,v_k)$ אם ורק אם קיים פתרון לממ\"ל $Ax=w$, כאשר $$.A=\begin{pmatrix}
+כעת נתמקד ב- $V=\mathbb{F}^n$ כדי להבין את הקשר בין המושג של בסיס לבין החומר של הפרקים הקודמים (הפיכות של מטריצה). נניח כי $v_1,...,v_k$ וקטורי עמודה ב- $\mathbb{F}^n$. ראינו בטענה -@prp-span-system שלכל $w\in\mathbb{F}^n$ מתקיים $w\in\mathop{\mathrm{Span}}(v_1,....,v_k)$ אם ורק אם קיים פתרון לממ\"ל $Ax=w$, כאשר $$.A=\begin{pmatrix}
 | & | & & | \\
 v_1 & v_2 & \cdots & v_k \\
 | & | & & |
@@ -570,7 +570,7 @@ v_1 & v_2 & \cdots & v_k \\
 :::
 
 ::: proof
- שבעת הסעיפים הראשונים שקולים לפי משפטים -@thm-invertible ו- -@thm-det-invertible. לפי טענות -@prp-column-space ו- -@prp-nullity מתקיים $$(\text{ח}) \iff (\text{ג})\iff(\text{ה})\iff(\text{ט})$$ מכאן שגם $(\text{י})$ שקול לכל התנאים הקודמים, כי הוא שילוב של $(\text{ח})$ ו- $(\text{ט})$.
+ שבעת הסעיפים הראשונים שקולים לפי משפטים -@thm-invertible ו- -@thm-det-invertible. לפי טענות -@prp-span-system ו- -@prp-nullity מתקיים $$(\text{ח}) \iff (\text{ג})\iff(\text{ה})\iff(\text{ט})$$ מכאן שגם $(\text{י})$ שקול לכל התנאים הקודמים, כי הוא שילוב של $(\text{ח})$ ו- $(\text{ט})$.
 
 בשביל שלושת הסעיפים האחרונים נסתכל על $A^t$. הסעיפים $(\text{יג}),(\text{יב}),(\text{יא})$ שקולים להפיכות של $A^t$, ולפי תרגיל -@exr-inverse-product, $A^t$ הפיכה אם ורק אם $A$ הפיכה. לכן, $(\text{יג}),(\text{יב}),(\text{יא})$ שקולים לכל שאר הסעיפים.
 :::
@@ -1208,7 +1208,7 @@ B=\begin{pmatrix}
 :::
 
 ::: proof
-זו מסקנה ישירה מטענה -@prp-span-member.
+זו מסקנה ישירה מטענה -@prp-span-system.
 :::
 
 ::: example
