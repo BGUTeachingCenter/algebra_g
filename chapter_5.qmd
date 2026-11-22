@@ -651,162 +651,37 @@ A=&\begin{pmatrix}
 
 קיבלנו שלושה איברים מובילים, והם נמצאים בעמודות הראשונה, השנייה והשלישית של המטריצה המקורית $A$. לכן הוקטורים המקוריים המתאימים להם הם $v_1,v_2,v_3$, והם תת-קבוצה בת״ל של הקבוצה הנתונה. ואכן, $v_4=v_1+2v_2$ ו-$v_5=3v_1-v_3$, כך שהעמודות הרביעית והחמישית מראות את היחסים בין הוקטורים.
 
-כעת נשלים את התת-קבוצה $\Set{v_1,v_2,v_3}$ לבסיס של $\mathbb{R}^4$. נדרג את המטריצה $A^t$, ששורותיה הן הוקטורים המקוריים.
-
+כעת נשלים את התת-קבוצה $\Set{v_1,v_2,v_3}$ לבסיס של $\mathbb{R}^4$. נבחר את וקטור היחידה $e_4=(0,0,0,1)$ כמועמד להשלמה ונבדוק ישירות אם ההוספה עובדת. נבנה את המטריצה שעמודותיה הן $v_1,v_2,v_3,e_4$, ונדרג אותה:
 $$\begin{aligned}
 \begin{pmatrix}
+1&0&0&0\\
 1&1&0&0\\
 0&1&1&0\\
-0&0&1&1\\
-1&3&2&0\\
-3&3&-1&-1
+0&0&1&1
 \end{pmatrix}
-&\xrightarrow{R_4-R_1\to R_4}
+&\xrightarrow{R_2-R_1\to R_2}
 \begin{pmatrix}
-1&1&0&0\\
+1&0&0&0\\
+0&1&0&0\\
 0&1&1&0\\
-0&0&1&1\\
-0&2&2&0\\
-3&3&-1&-1
+0&0&1&1
 \end{pmatrix}
-\xrightarrow{R_5-3R_1\to R_5}
+\xrightarrow{R_3-R_2\to R_3}
 \begin{pmatrix}
-1&1&0&0\\
-0&1&1&0\\
-0&0&1&1\\
-0&2&2&0\\
-0&0&-1&-1
+1&0&0&0\\
+0&1&0&0\\
+0&0&1&0\\
+0&0&1&1
 \end{pmatrix}
-\\[10pt]
+\xrightarrow{R_4-R_3\to R_4}
 \begin{pmatrix}
-1&1&0&0\\
-0&1&1&0\\
-0&0&1&1\\
-0&2&2&0\\
-0&0&-1&-1
-\end{pmatrix}
-&\xrightarrow{R_1-R_2\to R_1}
-\begin{pmatrix}
-1&0&-1&0\\
-0&1&1&0\\
-0&0&1&1\\
-0&2&2&0\\
-0&0&-1&-1
-\end{pmatrix}
-\xrightarrow{R_4-2R_2\to R_4}
-\begin{pmatrix}
-1&0&-1&0\\
-0&1&1&0\\
-0&0&1&1\\
-0&0&0&0\\
-0&0&-1&-1
-\end{pmatrix}
-\\[10pt]
-\begin{pmatrix}
-1&0&-1&0\\
-0&1&1&0\\
-0&0&1&1\\
-0&0&0&0\\
-0&0&-1&-1
-\end{pmatrix}
-&\xrightarrow{R_1+R_3\to R_1}
-\begin{pmatrix}
-1&0&0&1\\
-0&1&1&0\\
-0&0&1&1\\
-0&0&0&0\\
-0&0&-1&-1
-\end{pmatrix}
-\xrightarrow{R_2-R_3\to R_2}
-\begin{pmatrix}
-1&0&0&1\\
-0&1&0&-1\\
-0&0&1&1\\
-0&0&0&0\\
-0&0&-1&-1
-\end{pmatrix}
-\\[10pt]
-\begin{pmatrix}
-1&0&0&1\\
-0&1&0&-1\\
-0&0&1&1\\
-0&0&0&0\\
-0&0&-1&-1
-\end{pmatrix}
-&\xrightarrow{R_5+R_3\to R_5}
-\begin{pmatrix}
-1&0&0&1\\
-0&1&0&-1\\
-0&0&1&1\\
-0&0&0&0\\
-0&0&0&0
-\end{pmatrix}
-\end{aligned}$$
-
-לא החלפנו שורות בשום שלב בדירוג. בהתאפסות שתי השורות האחרונות רואים שהן צירופים לינאריים של שלוש השורות הראשונות, המתאימות לאיברים המובילים בעמודות הראשונה, השנייה והשלישית. כעת ניתן להשלים את תת-הקבוצה $\Set{v_1,v_2,v_3}$, שבחרנו מתוך הקבוצה המקורית, לבסיס של $\mathbb{R}^4$ באמצעות הוספת וקטור היחידה $e_4$. אין איבר מוביל בעמודה הרביעית של המטריצה המדורגת קנונית, ולכן הוספת וקטור זה משלים את שלוש השורות לבסיס של $\mathbb{R}^4$. אם ניפטר משורות האפסים ונוסיף את $e_4$, נקבל את המטריצה $$.\begin{pmatrix}
-1&0&0&1\\
-0&1&0&-1\\
-0&0&1&1\\
+1&0&0&0\\
+0&1&0&0\\
+0&0&1&0\\
 0&0&0&1
-\end{pmatrix}$$ זו מטריצה הפיכה (הדרגה מלאה), ולפי משפט -@thm-invertible2 נובע כי קבוצת שורותיה בת״ל ופורשת את $\mathbb{R}^4$. באותה מידה, אפשר להחליף את שלוש השורות הראשונות בוקטורים המקוריים $v_1,v_2,v_3$ ולהשלים אותם בעזרת $e_4$, וכך מתקבלת קבוצת הבסיס $\Set{v_1,v_2,v_3,e_4}$ של $\mathbb{R}^4$.
-:::
-
-מדוע ניתן להסיק את המסקנה הזו מהדירוג באמצעות שורות, בעוד שהדירוג הקודם באמצעות עמודות שימש רק לחילוץ תת-קבוצה בת״ל מתוך הקבוצה המקורית? הסיבה היא שפעולות שורה אינן משנות את מרחב השורות, בעוד שפעולות שורה עשויות לשנות את מרחב העמודות. בטענה הבאה נוכיח זאת במדויק.
-
-:::: {.proposition #prp-row-space-invariance}
-*`\label{prop:row-space-invariance}`{=latex} לכל $A\in\mathbb{M}_{m\times n}(\mathbb{F})$ ולכל פש\"א $S$, מתקיים $\mathop{\mathrm{Row}}(S(A))=\mathop{\mathrm{Row}}(A)$.*
-:::
-
-::: proof
- תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$ עם שורות $R_1,...,R_m\in\mathbb{F}^n$, ותהי $S$ פש\"א. אם מדובר בהחלפה בין שורות, ברור כי $\mathop{\mathrm{Row}}(S(A))=\mathop{\mathrm{Row}}(A)$ שהרי אין חשיבות לסדר הוקטורים הפורשים (לפי חוק החילוף). בכל מקרה אחר, $S$ משפיעה רק על שורה אחת $R_i$.
-
-נוכיח כי $\mathop{\mathrm{Row}}(S(A))\subseteq \mathop{\mathrm{Row}}(A)$: לפי טענה -@prp-vector-span, מספיק לבדוק שהשורה החדשה $R'_i$ במקום $R_i$ מקיימת $R'_i\in\mathop{\mathrm{Span}}(R_1,...,R_m)$. נשארו שני מקרים:
-
--   $S=(\alpha R_i\to R_i)$: במקרה זה מתקיים $$.R'_i=\alpha R_i\in\mathop{\mathrm{Span}}(R_i)\subseteq\mathop{\mathrm{Span}}(R_1,...,R_m)$$
-
--   $S=(R_i+\alpha R_j\to R_i)$: במקרה זה מתקיים $$.R'_i=R_i+\alpha R_j\in\mathop{\mathrm{Span}}(R_i,R_j)\subseteq\mathop{\mathrm{Span}}(R_1,...,R_m)$$
-
-נוכיח באופן דומה כי $\mathop{\mathrm{Row}}(S(A))\supseteq \mathop{\mathrm{Row}}(A)$: לפי טענה -@prp-vector-span, מספיק לבדוק שהשורה המקורית $R_i$ מקיימת $R_i\in\mathop{\mathrm{Span}}(R_1,...,R'_i,...,R_m)$. נבדוק את שני המקרים:
-
--   $S=(\alpha R_i\to R_i)$: במקרה זה מתקיים $$.R_i=\frac{1}{\alpha} R'_i\in\mathop{\mathrm{Span}}(R'_i)\subseteq\mathop{\mathrm{Span}}(R_1,...,R'_i,...,R_m)$$
-
--   $S=(R_i+\alpha R_j\to R_i)$: במקרה זה מתקיים $$.R_i=R'_i-\alpha R_j\in\mathop{\mathrm{Span}}(R'_i,R_j)\subseteq\mathop{\mathrm{Span}}(R_1,...,R'_i,...,R_m)$$
-
-
-:::
-
-::: {.corollary #cor-row-equivalence}
-*`\label{cor:row-equivalence}`{=latex} יהיו $A,B\in\mathbb{M}_{m\times n}(\mathbb{F})$ שקולות שורה. אז $\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Row}}(B)$.*
-:::
-
-::: proof
- לפי הנתון קיימות פש\"אות $S_1,...,S_k$ כך ש- $B=S_k(S_{k-1}(\cdots S_2(S_1(A))\cdots))$. לפי טענה -@prp-row-space-invariance, כל פש\"א אינה משנה את מרחב השורות, ולכן $$.\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Row}}(S_1(A))=\cdots=\mathop{\mathrm{Row}}(B)$$
-:::
-
-::: remark
-המשמעות של המסקנה האחרונה היא שהפרישה של קבוצת וקטורים לא תשתנה אם נבצע עליהם פש\"אות.
-:::
-
-::: exercise
-יהיו $A,B\in\mathbb{M}_{n\times n}(\mathbb{F})$ מטריצות ריבועיות. הוכיחו כי:
-
-א. $\mathop{\mathrm{Row}}(BA)\subseteq\mathop{\mathrm{Row}}(A)$.
-
-ב. אם $B$ הפיכה, אז מתקיים $\mathop{\mathrm{Row}}(BA)=\mathop{\mathrm{Row}}(A)$.
-:::
-
-::: {.callout-note collapse="true" title="פתרון"}
- 
-
-א. נראה כי כל שורה של $BA$ היא צירוף לינארי של שורות $A$, ולכן ינבע מטענה -@prp-vector-span כי $\mathop{\mathrm{Row}}(BA)\subseteq \mathop{\mathrm{Row}}(A)$. נסמן את שורות $A$ ב- $R_1,...,R_n$, ובנוסף נסמן $$.B=\begin{pmatrix}
-    b_{11} &\cdots &b_{1n} \\
-    \vdots &\vdots &\vdots \\
-    b_{n1} &\cdots &b_{nn}
-    \end{pmatrix}$$
-
-אז לפי הגדרת הכפל, לכל $1\leq i\leq n$ השורה ה- $i$ של $BA$ היא בדיוק הוקטור שנתון ע\"י הצירוף הלינארי הבא: $$\sum_{j=1}^n b_{ij}R_j\in\mathop{\mathrm{Span}}(R_1,...,R_n)=\mathop{\mathrm{Row}}(A)$$
-
-ב. מסעיף א' מתקיים $\mathop{\mathrm{Row}}(BA)\subseteq \mathop{\mathrm{Row}}(A)$. מאחר ש- $B$ הפיכה, מתקיים $A=B^{-1}(BA)$. נפעיל שוב את סעיף א', הפעם על $B^{-1}$ ועל $BA$, ונקבל $\mathop{\mathrm{Row}}(A)\subseteq \mathop{\mathrm{Row}}(BA)$. לכן $\mathop{\mathrm{Row}}(BA)=\mathop{\mathrm{Row}}(A)$.
+\end{pmatrix}.
+\end{aligned}$$
+הדרגה מלאה היא $4$, ולכן הקבוצה $\Set{v_1,v_2,v_3,e_4}$ היא בת״ל. מאחר שיש בה ארבעה וקטורים ב-$\mathbb R^4$, היא בסיס של $\mathbb R^4$.
 :::
 
 ## מימדים
@@ -1512,6 +1387,83 @@ $$\begin{aligned}
 \end{aligned}$$
 
 אז $\Set{(\frac{2}{3},-\frac{1}{3},1,0),(1,-2,0,1)}$ פורשת את $\mathop{\mathrm{N}}(A)$. קל לבדוק שהיא בת\"ל: נניח שקיימים $\alpha_1,\alpha_2\in\mathbb{R}$ כך ש- $$,\alpha_1(\frac{2}{3},-\frac{1}{3},1,0)+\alpha_2(1,-2,0,1)=(0,0,0,0)$$ אז לפי שתי הקוארדינטות האחרונות נקבל $\alpha_1=\alpha_2=0$. לכן, קבוצה זו היא בסיס ומתקיים $\dim(\mathop{\mathrm{N}}(A))=2$.
+:::
+
+:::: {.proposition #prp-row-space-invariance}
+*`\label{prop:row-space-invariance}`{=latex} לכל $A\in\mathbb{M}_{m\times n}(\mathbb{F})$ ולכל פש\"א $S$, מתקיים $\mathop{\mathrm{Row}}(S(A))=\mathop{\mathrm{Row}}(A)$.*
+:::
+
+::: proof
+ תהי $A\in\mathbb{M}_{m\times n}(\mathbb{F})$ עם שורות $R_1,...,R_m\in\mathbb{F}^n$, ותהי $S$ פש\"א. אם מדובר בהחלפה בין שורות, ברור כי $\mathop{\mathrm{Row}}(S(A))=\mathop{\mathrm{Row}}(A)$ שהרי אין חשיבות לסדר הוקטורים הפורשים (לפי חוק החילוף). בכל מקרה אחר, $S$ משפיעה רק על שורה אחת $R_i$.
+
+נוכיח כי $\mathop{\mathrm{Row}}(S(A))\subseteq \mathop{\mathrm{Row}}(A)$: לפי טענה -@prp-vector-span, מספיק לבדוק שהשורה החדשה $R'_i$ במקום $R_i$ מקיימת $R'_i\in\mathop{\mathrm{Span}}(R_1,...,R_m)$. נשארו שני מקרים:
+
+-   $S=(\alpha R_i\to R_i)$: במקרה זה מתקיים $$.R'_i=\alpha R_i\in\mathop{\mathrm{Span}}(R_i)\subseteq\mathop{\mathrm{Span}}(R_1,...,R_m)$$
+
+-   $S=(R_i+\alpha R_j\to R_i)$: במקרה זה מתקיים $$.R'_i=R_i+\alpha R_j\in\mathop{\mathrm{Span}}(R_i,R_j)\subseteq\mathop{\mathrm{Span}}(R_1,...,R_m)$$
+
+נוכיח באופן דומה כי $\mathop{\mathrm{Row}}(S(A))\supseteq \mathop{\mathrm{Row}}(A)$: לפי טענה -@prp-vector-span, מספיק לבדוק שהשורה המקורית $R_i$ מקיימת $R_i\in\mathop{\mathrm{Span}}(R_1,...,R'_i,...,R_m)$. נבדוק את שני המקרים:
+
+-   $S=(\alpha R_i\to R_i)$: במקרה זה מתקיים $$.R_i=\frac{1}{\alpha} R'_i\in\mathop{\mathrm{Span}}(R'_i)\subseteq\mathop{\mathrm{Span}}(R_1,...,R'_i,...,R_m)$$
+
+-   $S=(R_i+\alpha R_j\to R_i)$: במקרה זה מתקיים $$.R_i=R'_i-\alpha R_j\in\mathop{\mathrm{Span}}(R'_i,R_j)\subseteq\mathop{\mathrm{Span}}(R_1,...,R'_i,...,R_m)$$
+:::
+
+::: {.corollary #cor-row-equivalence}
+*`\label{cor:row-equivalence}`{=latex} יהיו $A,B\in\mathbb{M}_{m\times n}(\mathbb{F})$ שקולות שורה. אז $\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Row}}(B)$.*
+:::
+
+::: proof
+ לפי הנתון קיימות פש\"אות $S_1,...,S_k$ כך ש- $B=S_k(S_{k-1}(\cdots S_2(S_1(A))\cdots))$. לפי טענה -@prp-row-space-invariance, כל פש\"א אינה משנה את מרחב השורות, ולכן $$.\mathop{\mathrm{Row}}(A)=\mathop{\mathrm{Row}}(S_1(A))=\cdots=\mathop{\mathrm{Row}}(B)$$
+:::
+
+::: remark
+המשמעות של המסקנה האחרונה היא שהפרישה של קבוצת וקטורים לא תשתנה אם נבצע עליהם פש\"אות.
+:::
+
+::: example
+כעת, לאחר שהוגדרו מרחב השורות ומרחב העמודות, אפשר לחזור לדוגמה 7.8 ולהציג דרך חלופית ושיטתית יותר. נשתמש באותה המטריצה $A$ מדוגמה 7.8, ונעביר אותה ל-$A^t$, כך שהוקטורים המקוריים $v_1,v_2,v_3,v_4,v_5$ יופיעו כשורות:
+$$A^t=\begin{pmatrix}
+1&1&0&0\\
+0&1&1&0\\
+0&0&1&1\\
+1&3&2&0\\
+3&3&-1&-1
+\end{pmatrix}\sim
+\begin{pmatrix}
+1&0&0&1\\
+0&1&0&-1\\
+0&0&1&1\\
+0&0&0&0\\
+0&0&0&0
+\end{pmatrix}.$$
+תוצאות 7.20–7.21 מראות שהפרישה של השורות נשמרת תחת פעולות שורה, ולכן ניתן לזהות שוב את $v_1,v_2,v_3$ כתת-קבוצה בת״ל מתוך הקבוצה המקורית; שתי השורות האחרונות הן צירופים לינאריים של שלוש השורות הראשונות.
+
+בדירוג אין איבר מוביל בעמודה הרביעית. לכן, לפי ההגדרה של מרחב השורות והעובדה שפשוט להוסיף לשורות המדורגות את וקטור היחידה $e_4$, אפשר להשלים את השורות הראשונות לבסיס של $\mathbb R^4$. מכיוון שלא החלפנו שורות במהלך הדירוג, אפשר להחליף את השורות המעובדות בשלושת הוקטורים המקוריים $v_1,v_2,v_3$ ולקבל את הבסיס $\Set{v_1,v_2,v_3,e_4}$.
+
+זהו הסבר חלופי ומבני יותר למה שבדוגמה 7.8 נעשה באמצעות בחירת $e_4$ ובדיקה ישירה. שם בדקנו שעמודות $v_1,v_2,v_3,e_4$ נותנות דרגה $4$; כאן הדירוג של $A^t$ מספק דרך שיטתית לזהות את תת-הקבוצה הבת״ל ולהשלימה לבסיס.
+:::
+
+::: exercise
+יהיו $A,B\in\mathbb{M}_{n\times n}(\mathbb{F})$ מטריצות ריבועיות. הוכיחו כי:
+
+א. $\mathop{\mathrm{Row}}(BA)\subseteq\mathop{\mathrm{Row}}(A)$.
+
+ב. אם $B$ הפיכה, אז מתקיים $\mathop{\mathrm{Row}}(BA)=\mathop{\mathrm{Row}}(A)$.
+:::
+
+::: {.callout-note collapse="true" title="פתרון"}
+ 
+
+א. נראה כי כל שורה של $BA$ היא צירוף לינארי של שורות $A$, ולכן ינבע מטענה -@prp-vector-span כי $\mathop{\mathrm{Row}}(BA)\subseteq \mathop{\mathrm{Row}}(A)$. נסמן את שורות $A$ ב- $R_1,...,R_n$, ובנוסף נסמן $$.B=\begin{pmatrix}
+    b_{11} &\cdots &b_{1n} \\
+    \vdots &\vdots &\vdots \\
+    b_{n1} &\cdots &b_{nn}
+    \end{pmatrix}$$
+
+אז לפי הגדרת הכפל, לכל $1\leq i\leq n$ השורה ה- $i$ של $BA$ היא בדיוק הוקטור שנתון ע\"י הצירוף הלינארי הבא: $$\sum_{j=1}^n b_{ij}R_j\in\mathop{\mathrm{Span}}(R_1,...,R_n)=\mathop{\mathrm{Row}}(A)$$
+
+ב. מסעיף א' מתקיים $\mathop{\mathrm{Row}}(BA)\subseteq \mathop{\mathrm{Row}}(A)$. מאחר ש- $B$ הפיכה, מתקיים $A=B^{-1}(BA)$. נפעיל שוב את סעיף א', הפעם על $B^{-1}$ ועל $BA$, ונקבל $\mathop{\mathrm{Row}}(A)\subseteq \mathop{\mathrm{Row}}(BA)$. לכן $\mathop{\mathrm{Row}}(BA)=\mathop{\mathrm{Row}}(A)$.
 :::
 
 :::: {.exercise #exr-column-dim}
