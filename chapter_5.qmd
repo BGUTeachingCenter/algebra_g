@@ -2466,7 +2466,7 @@ $$\begin{aligned}
 \end{aligned}$$ לפי משפט -@thm-invertible2, וקטורי הקוארדינטות (עמודות המטריצה) לא מהווים בסיס ל- $\mathbb{R}^4$. לפי משפט -@thm-test-by-coordinates, נובע כי הקבוצה המקורית של המטריצות לא מהווה בסיס ל- $\mathbb{M}_{2\times 2}(\mathbb{R})$. יותר מכך, קבוצה זו אינה בת\"ל וגם אינה פורשת.
 :::
 
-נחזור למסקנה -@cor-size-dim, ונראה כיצד ניתן להוכיח אותה בעזרת משפט -@thm-test-by-coordinates.
+נחזור למסקנה -@cor-size-dim2, ונראה כיצד ניתן להוכיח אותה בעזרת משפט -@thm-test-by-coordinates.
 
 ::: proof
  נסתכל על וקטורי הקוארדינטות ביחס ל- $B$ ונשתמש במשפט -@thm-test-by-coordinates ומסקנה -@cor-size-dim.
