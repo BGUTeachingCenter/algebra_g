@@ -13,7 +13,7 @@
 :::
 
 ::: example
-א. עבור $A\in\mathbb{M}_{m\times n}(\mathbb{F})$, נסתכל על $\mathop{\mathrm{N}}(A)$ - מרחב הפתרונות של הממ\"ל $Ax=0$. נסתכל גם על $\mathop{\mathrm{N}}(B)$ עבור $B\in\mathbb{M}_{k\times n}(\mathbb{F})$. אז $\mathop{\mathrm{N}}(A)\cap \mathop{\mathrm{N}}(B)=\mathop{\mathrm{N}}\begin{pmatrix}
+א. עבור $A\in\mathbb{M}_{m\times n}(\mathbb{F})$, נסתכל על $\mathop{\mathrm{N}}(A)$ - מרחב הפתרונות של הממ\"ל $Ax=\underline{0}$. נסתכל גם על $\mathop{\mathrm{N}}(B)$ עבור $B\in\mathbb{M}_{k\times n}(\mathbb{F})$. אז $\mathop{\mathrm{N}}(A)\cap \mathop{\mathrm{N}}(B)=\mathop{\mathrm{N}}\begin{pmatrix}
     A \\
     B
     \end{pmatrix}$, כאשר $\begin{pmatrix}
