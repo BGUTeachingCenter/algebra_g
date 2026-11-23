@@ -359,33 +359,8 @@ $$\begin{aligned}
 :::
 
 ::: example
- 
 
-א. ב- $\mathbb{R}^2$, לכל שני ישרים מהצורה $L_1=\mathop{\mathrm{Span}}(v_1),L_2=\mathop{\mathrm{Span}}(v_2)$ כך ש- $L_1\neq L_2$ מתקיים: $$\begin{aligned}
-    \dim(L_1)&=\dim(L_2)=1 \\
-    \dim(L_1\cap L_2)&=\dim(\Set{0})=0
-    \end{aligned}$$ נציב את המספרים בנוסחת המימדים ונקבל $$,\dim(L_1+L_2)=2=1+1-0=2$$ ולכן $L_1+L_2=\mathbb{R}^2$ כי זהו תת-המרחב היחיד של $\mathbb{R}^2$ ממימד $2$.
-
-לעומת זאת, אם $L_1=L_2$ נקבל: $$\begin{aligned}
-    \dim(L_1+L_2)&=\dim(L_1)=1\\
-    \dim(L_1\cap L_2)&=\dim(L_1)=1
-    \end{aligned}$$
-
-ועדיין הנוסחה מתקיימת: $$\dim(L_1+L_2)=1=1+1-1=\dim(L_1)+\dim(L_2)-\dim(L_1\cap L_2)$$
-
-ב. ב- $\mathbb{R}^3$, כל שני מישורים מהצורה $H_1=\mathop{\mathrm{Span}}(v_1,v_2),H_2=\mathop{\mathrm{Span}}(v_3,v_4)$ כך ש- $H_1\neq H_2$ נחתכים לאורך ישר $L$ כלשהו. אז מתקיים: $$\begin{aligned}
-    \dim(H_1)&=\dim(H_2)=2 \\
-    \dim(H_1\cap H_2)&=\dim(L)=1
-    \end{aligned}$$ נציב את המספרים בנוסחת המימדים ונקבל $$,\dim(H_1+H_2)=\dim(H_1)+\dim(H_2)-\dim(H_1\cap H_2)=2+2-1=3$$ ולכן $H_1+H_2=\mathbb{R}^3$.
-
-אם $H_1=H_2$ נקבל $$\begin{aligned}
-    \dim(H_1+H_2)&=\dim(H_1)=2\\
-    \dim(H_1\cap H_2)&=\dim(H_1)=2
-    \end{aligned}$$
-
-שוב הנוסחה מתקיימת: $$\dim(H_1+H_2)=2=2+2-2=\dim(H_1)+\dim(H_2)-\dim(H_1\cap H_2)$$
-
-ג. ב- $\mathbb{F}^n$, כאשר $n\geq2$, נסתכל על שני על-מישורים שונים $H_1,H_2$. הכוונה היא לתת-מרחבים ממימד $n-1$. מהו מימד הסכום? מימד החיתוך? יותר קל לענות על השאלה הראשונה, כי מתקיים $$.H_1\subseteq H_1+H_2\subseteq \mathbb{F}^n \implies n-1=\dim(H_1)\leq\dim(H_1+H_2)\leq n$$
+א. ב- $\mathbb{F}^n$, כאשר $n\geq2$, נסתכל על שני תת-מרחבים שונים $H_1,H_2$ ממימד $n-1$. מהו מימד הסכום? מימד החיתוך? יותר קל לענות על השאלה הראשונה, כי מתקיים $$.H_1\subseteq H_1+H_2\subseteq \mathbb{F}^n \implies n-1=\dim(H_1)\leq\dim(H_1+H_2)\leq n$$
 
 לא ייתכן כי $\dim(H_1)=\dim(H_1+H_2)$, שהרי זה גורר $H_1=H_1+H_2$ ומכאן $H_2\subseteq H_1$. זו סתירה כי $\dim(H_2)=\dim(H_1)$, אך $H_2\neq H_1$. לכן, מתקיים $\dim(H_1+H_2)\neq n-1$, ואז בהכרח נובע כי $$.\dim(H_1+H_2)=n=\dim(\mathbb{F}^n) \implies H_1+H_2=\mathbb{F}^n$$
 
@@ -393,7 +368,7 @@ $$\begin{aligned}
 
 $$.n=n-1+n-1-\dim(H_1\cap H_2) \implies \dim(H_1\cap H_2)=n-2$$
 
-ד. ב- $\mathbb{M}_{n\times n}(\mathbb{F})$ נסמן את תת-המרחבים של מטריצות סימטריות ואנטי-סימטריות: $$\begin{aligned}
+ב. ב- $\mathbb{M}_{n\times n}(\mathbb{F})$ נסמן את תת-המרחבים של מטריצות סימטריות ואנטי-סימטריות: $$\begin{aligned}
     W_1&=\Set{A\in \mathbb{M}_{n\times n}(\mathbb{F})|A^t=A} \\
     W_2&=\Set{A\in \mathbb{M}_{n\times n}(\mathbb{F})|A^t=-A}
     \end{aligned}$$
