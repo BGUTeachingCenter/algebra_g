@@ -1,6 +1,6 @@
 \maketitle
 
-# תת-מרחבים {#ch:subspaces}
+# פעולות על תת-מרחבים {#ch:subspaces}
 
 ## פעולות החיתוך והסכום
 
