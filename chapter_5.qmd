@@ -770,51 +770,7 @@ $B=\Set{b_1,...,b_n}$
 ב. התשובה היא לא. לפי מסקנה -@cor-size-dim2, הגודל המינימלי של קבוצה שפורשת את $\mathbb{M}_{2\times 2}(\mathbb{R})$ הוא $4$.
 :::
 
-::: exercise
-נגדיר תת-מרחב ב- $\mathbb{M}_{2\times 2}(\mathbb{C})$ ע\"י $$.W=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
-1 & i \\
-i & 1
-\end{pmatrix},\begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix}, \begin{pmatrix}
-2 & 1+i \\
-1+i & 2
-\end{pmatrix}\right)$$ מהו $\dim(W)$? מצאו בסיס ל- $W$ והשלימו אותו לבסיס ל- $\mathbb{M}_{2\times 2}(\mathbb{C})$.
-:::
-
-::: {.callout-note collapse="true" title="פתרון"}
-נשתמש בוקטורי קוארדינטות לפי הבסיס הסטנדרטי $E$ של $\mathbb{M}_{2\times 2}(\mathbb{C})$. נכתוב אותם כשורות מטריצה (כי המטרה היא להשלים את הבסיס), נדרג אותה ונקבל $$\begin{aligned}
-\begin{pmatrix}
-1 & i & i & 1 \\
-0 & 1 & 1 & 0 \\
-2 & 1+i & 1+i & 2
-\end{pmatrix}&\xrightarrow{R_1-iR_2\to R_1}\begin{pmatrix}
-1 & 0 & 0 & 1 \\
-0 & 1 & 1 & 0 \\
-2 & 1+i & 1+i & 2
-\end{pmatrix} \\
-&\xrightarrow{R_3-2R_1-(1+i)R_2\to R_3}\begin{pmatrix}
-1 & 0 & 0 & 1 \\
-0 & 1 & 1 & 0 \\
-0 & 0 & 0 & 0
-\end{pmatrix}
-\end{aligned}$$ זה מראה כי השורה השלישית היא צירוף לינארי של שתי השורות הראשונות, שמהוות בסיס למרחב השורות. בנוסף, ניתן להוסיף את וקטורי היחידה $e_3,e_4$ כדי להשלים את בסיס זה לבסיס ל- $\mathbb{C}^4$. נחזור חזרה למרחב הוקטורי $\mathbb{M}_{2\times 2}$ ונקבל ש- $\Set{\begin{pmatrix}1 & i\\i & 1\end{pmatrix},\begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}}$ היא בסיס ל- $W$, ולכן $\dim(W)=2$. לאחר השלמה נקבל את הבסיס הבא ל- $\mathbb{M}_{2\times 2}(\mathbb{C})$: $$\Set{\begin{pmatrix}
-1 & i \\
-i & 1
-\end{pmatrix},\begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix},\begin{pmatrix}
-0 & 0 \\
-1 & 0
-\end{pmatrix},\begin{pmatrix}
-0 & 0 \\
-0 & 1
-\end{pmatrix}}$$
-:::
-
-כעת נוכיח הכללה של משפט -@thm-3-for-2 (\"שלישי חינם\") למרחבים וקטוריים כלליים:
+כעת נציג הכללה של משפט -@thm-3-for-2 (\"שלישי חינם\") למרחבים וקטוריים כלליים:
 
 :::: {.theorem #thm-3-for-2-V}
 *`\label{thm:3-for-2-V}`{=latex} 
@@ -2510,6 +2466,8 @@ $$\begin{aligned}
 \end{aligned}$$ לפי משפט -@thm-invertible2, וקטורי הקוארדינטות (עמודות המטריצה) לא מהווים בסיס ל- $\mathbb{R}^4$. לפי משפט -@thm-test-by-coordinates, נובע כי הקבוצה המקורית של המטריצות לא מהווה בסיס ל- $\mathbb{M}_{2\times 2}(\mathbb{R})$. יותר מכך, קבוצה זו אינה בת\"ל וגם אינה פורשת.
 :::
 
+נחזור למסקנה -@cor-size-dim, ונראה כיצד ניתן להוכיח אותה בעזרת משפט -@thm-test-by-coordinates.
+
 **מסקנה 7.20.**
 יהי $V$ מ\"ו מעל $\mathbb{F}$, ויהיו $B=\Set{b_1,...,b_n}$ בסיס ל-$V$ ו- $v_1,...,v_k\in V$.
 
@@ -2528,6 +2486,8 @@ $$\begin{aligned}
 
 ג. נניח כי $\Set{v_1,...,v_k}$ בסיס ל- $V$. אז משני הסעיפים הקודמים נובע כי $k\leq n$ וגם $k\geq n$, ולכן $k=n$.
 :::
+
+באופן דומה, ניתן להוכיח את המשפט הבא בעזרת משפט -@thm-test-by-coordinates ומסקנה -@cor-for-2.
 
 **משפט 7.23.**
 יהי $V$ מ\"ו מעל $\mathbb{F}$ כך ש- $\dim(V)=n$, ותהי $S\subseteq V$. אז כל שניים מהתנאים הבאים גוררים את התנאי השלישי:
@@ -2548,6 +2508,50 @@ $$\begin{aligned}
 ג. ב- $S_B$ יש בדיוק $n$ וקטורים (כלומר $k=n$).
 
 לבסוף, לפי משפט -@thm-test-by-coordinates, כל תנאי לעיל שקול לתנאי המתאים לגבי $S$. לכן, כל שניים מהתנאים לגבי $S$ גוררים את התנאי השלישי.
+:::
+
+::: exercise
+נגדיר תת-מרחב ב- $\mathbb{M}_{2\times 2}(\mathbb{C})$ ע\"י $$.W=\mathop{\mathrm{Span}}\left(\begin{pmatrix}
+1 & i \\
+i & 1
+\end{pmatrix},\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}, \begin{pmatrix}
+2 & 1+i \\
+1+i & 2
+\end{pmatrix}\right)$$ מהו $\dim(W)$? מצאו בסיס ל- $W$ והשלימו אותו לבסיס ל- $\mathbb{M}_{2\times 2}(\mathbb{C})$.
+:::
+
+::: {.callout-note collapse="true" title="פתרון"}
+נשתמש בוקטורי קוארדינטות לפי הבסיס הסטנדרטי $E$ של $\mathbb{M}_{2\times 2}(\mathbb{C})$. נכתוב אותם כשורות מטריצה (כי המטרה היא להשלים את הבסיס), נדרג אותה ונקבל $$\begin{aligned}
+\begin{pmatrix}
+1 & i & i & 1 \\
+0 & 1 & 1 & 0 \\
+2 & 1+i & 1+i & 2
+\end{pmatrix}&\xrightarrow{R_1-iR_2\to R_1}\begin{pmatrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+2 & 1+i & 1+i & 2
+\end{pmatrix} \\
+&\xrightarrow{R_3-2R_1-(1+i)R_2\to R_3}\begin{pmatrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+\end{aligned}$$ זה מראה כי השורה השלישית היא צירוף לינארי של שתי השורות הראשונות, שמהוות בסיס למרחב השורות. בנוסף, ניתן להוסיף את וקטורי היחידה $e_3,e_4$ כדי להשלים את בסיס זה לבסיס ל- $\mathbb{C}^4$. נחזור חזרה למרחב הוקטורי $\mathbb{M}_{2\times 2}$ ונקבל ש- $\Set{\begin{pmatrix}1 & i\\i & 1\end{pmatrix},\begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}}$ היא בסיס ל- $W$, ולכן $\dim(W)=2$. לאחר השלמה נקבל את הבסיס הבא ל- $\mathbb{M}_{2\times 2}(\mathbb{C})$: $$\Set{\begin{pmatrix}
+1 & i \\
+i & 1
+\end{pmatrix},\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix},\begin{pmatrix}
+0 & 0 \\
+1 & 0
+\end{pmatrix},\begin{pmatrix}
+0 & 0 \\
+0 & 1
+\end{pmatrix}}$$
 :::
 
 ## העשרה: פרישה ותלות לינארית במישור ובמרחב
